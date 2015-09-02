@@ -1,0 +1,60 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Cheques.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="sunDatabase" Type="System.String" Scope="User">
+      <Value Profile="(Default)">SUNPLUSADV</Value>
+    </Setting>
+    <Setting Name="sunDatasource" Type="System.String" Scope="User">
+      <Value Profile="(Default)">SUNPLUSSVR</Value>
+    </Setting>
+    <Setting Name="sunUser" Type="System.String" Scope="User">
+      <Value Profile="(Default)">sa</Value>
+    </Setting>
+    <Setting Name="sunPassword" Type="System.String" Scope="User">
+      <Value Profile="(Default)">SunPlus7!</Value>
+    </Setting>
+    <Setting Name="sunLibro" Type="System.String" Scope="User">
+      <Value Profile="(Default)">A</Value>
+    </Setting>
+    <Setting Name="sunUnidadDeNegocio" Type="System.String" Scope="User">
+      <Value Profile="(Default)">CEA</Value>
+    </Setting>
+    <Setting Name="sunEspacios" Type="System.String" Scope="User">
+      <Value Profile="(Default)">102</Value>
+    </Setting>
+    <Setting Name="sunImpresionDirecta" Type="System.String" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="entersPrimeros" Type="System.String" Scope="User">
+      <Value Profile="(Default)">7</Value>
+    </Setting>
+    <Setting Name="espaciosDeFecha" Type="System.String" Scope="User">
+      <Value Profile="(Default)">182</Value>
+    </Setting>
+    <Setting Name="entersEntreFechaYNombre" Type="System.String" Scope="User">
+      <Value Profile="(Default)">4</Value>
+    </Setting>
+    <Setting Name="entersEntreNombreYLetras" Type="System.String" Scope="User">
+      <Value Profile="(Default)">2</Value>
+    </Setting>
+    <Setting Name="espaciosEntreNombreYTotal" Type="System.String" Scope="User">
+      <Value Profile="(Default)">64</Value>
+    </Setting>
+    <Setting Name="leftCheque" Type="System.String" Scope="User">
+      <Value Profile="(Default)">220</Value>
+    </Setting>
+    <Setting Name="topCheque" Type="System.String" Scope="User">
+      <Value Profile="(Default)">52</Value>
+    </Setting>
+    <Setting Name="anchoCheque" Type="System.String" Scope="User">
+      <Value Profile="(Default)">420</Value>
+    </Setting>
+    <Setting Name="largoCheque" Type="System.String" Scope="User">
+      <Value Profile="(Default)">192</Value>
+    </Setting>
+    <Setting Name="DatabaseCheques" Type="System.String" Scope="User">
+      <Value Profile="(Default)">SUNPLUSCHEQUES</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
