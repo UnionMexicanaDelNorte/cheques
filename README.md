@@ -6,6 +6,7 @@ C# project which connect mysql and printed bank checks
 2.- Create "SUNPLUSCHEQUES" database and apply backup (SUNPLUSCHEQUES.bak file)
 
 3.- Optionally modify ChequesSRC if needed
+Note: maybe is necesary update some references
 
 4.- In clients machines, copy and install deploy folder (or your modified copy) in whatever folder in C drive
 
