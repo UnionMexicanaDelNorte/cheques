@@ -11,12 +11,14 @@ using PdfFileWriter;
 using System.Threading.Tasks;
 using System.Diagnostics;
 using System.Data.SqlClient;
+using System.Web.UI;
 namespace Cheques
 {
     public partial class previewCheque : Form
     {
         public String FileNameToPDF { get; set; }
-       
+        public int tipoDeBancoGlobal { get; set; }
+      
         public String fecha { get; set; }
         
         public String nombre { get; set; }
@@ -47,7 +49,12 @@ namespace Cheques
         {
             InitializeComponent();
         }
-
+        public previewCheque(int tipoDeBanco)
+        {
+            InitializeComponent();
+            tipoDeBancoGlobal = tipoDeBanco;
+        }
+        
         // Define Tiling Pattern Resource
         private void DefineTilingPatternResource()
         {
@@ -123,7 +130,7 @@ namespace Cheques
 
         public void vuelveAHacerElCheque(bool conImagen)
         {
-            string path = "S:" + (object)Path.DirectorySeparatorChar + "cheques";
+            string path = Properties.Settings.Default.letra+ ":" + (object)Path.DirectorySeparatorChar + "cheques";
             if (!Directory.Exists(path))
                 Directory.CreateDirectory(path);
             if (File.Exists(FileName))
@@ -137,7 +144,8 @@ namespace Cheques
                     System.Windows.Forms.MessageBox.Show(ex2.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
-            String fileImage = path +  (object)Path.DirectorySeparatorChar+"cheque.jpg";
+            String fileImage = path + (object)Path.DirectorySeparatorChar + "cheque" + tipoDeBancoGlobal+".jpg";
+
             Document = new PdfDocument(PaperType.sobreprima, false, UnitOfMeasure.Point, FileName);
             DefineFontResources();
             DefineTilingPatternResource();
@@ -152,32 +160,43 @@ namespace Cheques
             const Double FontSize = 9.0;
             StringBuilder espacios = new StringBuilder("");
             int j = 0;
-            for (j = 0; j < Convert.ToInt32(Properties.Settings.Default.sunEspacios); j++)
+            int cuantos = 0;
+            cuantos = Convert.ToInt32(DataBinder.Eval(Properties.Settings.Default, "sunEspacios" + tipoDeBancoGlobal));
+            for (j = 0; j < cuantos; j++)
             {
                 espacios.Append(" ");
             }
+            cuantos = Convert.ToInt32(DataBinder.Eval(Properties.Settings.Default, "entersPrimeros" + tipoDeBancoGlobal));
             StringBuilder entersPrimeros = new StringBuilder("");
-            for (j = 0; j < Convert.ToInt32(Properties.Settings.Default.entersPrimeros); j++)
+            for (j = 0; j < cuantos; j++)
             {
                 entersPrimeros.Append("\n");
             }
+            cuantos = Convert.ToInt32(DataBinder.Eval(Properties.Settings.Default, "espaciosDeFecha" + tipoDeBancoGlobal));
+          
             StringBuilder espaciosDeFecha = new StringBuilder("");
-            for (j = 0; j < Convert.ToInt32(Properties.Settings.Default.espaciosDeFecha); j++)
+            for (j = 0; j < cuantos; j++)
             {
                 espaciosDeFecha.Append(" ");
             }
+            cuantos = Convert.ToInt32(DataBinder.Eval(Properties.Settings.Default, "entersEntreFechaYNombre" + tipoDeBancoGlobal));
+          
             StringBuilder entersEntreFechaYNombre = new StringBuilder("");
-            for (j = 0; j < Convert.ToInt32(Properties.Settings.Default.entersEntreFechaYNombre); j++)
+            for (j = 0; j < cuantos; j++)
             {
                 entersEntreFechaYNombre.Append("\n");
             }
+            cuantos = Convert.ToInt32(DataBinder.Eval(Properties.Settings.Default, "entersEntreNombreYLetras" + tipoDeBancoGlobal));
+          
             StringBuilder entersEntreNombreYLetras = new StringBuilder("");
-            for (j = 0; j < Convert.ToInt32(Properties.Settings.Default.entersEntreNombreYLetras); j++)
+            for (j = 0; j < cuantos; j++)
             {
                 entersEntreNombreYLetras.Append("\n");
             }
+            cuantos = Convert.ToInt32(DataBinder.Eval(Properties.Settings.Default, "espaciosEntreNombreYTotal" + tipoDeBancoGlobal));
+          
             StringBuilder espaciosEntreNombreYTotal = new StringBuilder("");
-            for (j = 0; j < Convert.ToInt32(Properties.Settings.Default.espaciosEntreNombreYTotal); j++)
+            for (j = 0; j < cuantos; j++)
             {
                 espaciosEntreNombreYTotal.Append(" ");
             }
@@ -195,8 +214,12 @@ namespace Cheques
                // Contents.DrawOval(50, 50, 469, 292, PaintOp.ClipPathEor);
 
                 // draw image
-                
-                Contents.DrawImage(Image, Convert.ToInt32( Properties.Settings.Default.leftCheque),Convert.ToInt32( Properties.Settings.Default.topCheque), Convert.ToInt32(Properties.Settings.Default.anchoCheque), Convert.ToInt32(Properties.Settings.Default.largoCheque));
+                int top = Convert.ToInt32(DataBinder.Eval(Properties.Settings.Default, "topCheque" + tipoDeBancoGlobal));
+                int left = Convert.ToInt32(DataBinder.Eval(Properties.Settings.Default, "leftCheque" + tipoDeBancoGlobal));
+                int ancho = Convert.ToInt32(DataBinder.Eval(Properties.Settings.Default, "anchoCheque" + tipoDeBancoGlobal));
+                int largo = Convert.ToInt32(DataBinder.Eval(Properties.Settings.Default, "largoCheque" + tipoDeBancoGlobal));
+
+                Contents.DrawImage(Image, left, top, ancho, largo);
 
                 // restore graphics state
                 Contents.RestoreGraphicsState();
@@ -251,33 +274,34 @@ namespace Cheques
         private void previewCheque_Load(object sender, EventArgs e)
         {
             entersPrimeros.KeyPress +=entersPrimeros_KeyPress;
-            entersPrimeros.Text = Properties.Settings.Default.entersPrimeros;
+            entersPrimeros.Text = Convert.ToString(DataBinder.Eval(Properties.Settings.Default, "entersPrimeros" + tipoDeBancoGlobal));
             espaciosIzquierda.KeyPress += espaciosIzquierda_KeyPress;
-            espaciosIzquierda.Text = Properties.Settings.Default.sunEspacios;
+            espaciosIzquierda.Text = Convert.ToString(DataBinder.Eval(Properties.Settings.Default, "sunEspacios" + tipoDeBancoGlobal));
+                
 
             espaciosDeFecha.KeyPress += espaciosDeFecha_KeyPress;
-            espaciosDeFecha.Text = Properties.Settings.Default.espaciosDeFecha;
+            espaciosDeFecha.Text = Convert.ToString(DataBinder.Eval(Properties.Settings.Default, "espaciosDeFecha" + tipoDeBancoGlobal));
 
             entersEntreFechaYNombre.KeyPress += entersEntreFechaYNombre_KeyPress;
-            entersEntreFechaYNombre.Text = Properties.Settings.Default.entersEntreFechaYNombre;
+            entersEntreFechaYNombre.Text = Convert.ToString(DataBinder.Eval(Properties.Settings.Default, "entersEntreFechaYNombre" + tipoDeBancoGlobal));
 
             entersEntreNombreYLetras.KeyPress += entersEntreNombreYLetras_KeyPress;
-            entersEntreNombreYLetras.Text = Properties.Settings.Default.entersEntreNombreYLetras;
+            entersEntreNombreYLetras.Text = Convert.ToString(DataBinder.Eval(Properties.Settings.Default, "entersEntreNombreYLetras" + tipoDeBancoGlobal));
 
             espaciosEntreNombreYTotal.KeyPress += espaciosEntreNombreYTotal_KeyPress;
-            espaciosEntreNombreYTotal.Text = Properties.Settings.Default.espaciosEntreNombreYTotal;
+            espaciosEntreNombreYTotal.Text = Convert.ToString(DataBinder.Eval(Properties.Settings.Default, "espaciosEntreNombreYTotal" + tipoDeBancoGlobal));
 
             leftCheque.KeyPress += leftCheque_KeyPress;
-            leftCheque.Text = Properties.Settings.Default.leftCheque;
+            leftCheque.Text = Convert.ToString(DataBinder.Eval(Properties.Settings.Default, "leftCheque" + tipoDeBancoGlobal));
 
             topCheque.KeyPress += topCheque_KeyPress;
-            topCheque.Text = Properties.Settings.Default.topCheque;
+            topCheque.Text = Convert.ToString(DataBinder.Eval(Properties.Settings.Default, "topCheque" + tipoDeBancoGlobal));
 
             anchoCheque.KeyPress += anchoCheque_KeyPress;
-            anchoCheque.Text = Properties.Settings.Default.anchoCheque;
+            anchoCheque.Text = Convert.ToString(DataBinder.Eval(Properties.Settings.Default, "anchoCheque" + tipoDeBancoGlobal));
 
             largoCheque.KeyPress += largoCheque_KeyPress;
-            largoCheque.Text = Properties.Settings.Default.largoCheque;
+            largoCheque.Text = Convert.ToString(DataBinder.Eval(Properties.Settings.Default, "largoCheque" + tipoDeBancoGlobal));
 
 
             
@@ -291,8 +315,19 @@ namespace Cheques
             if (e.KeyChar == 13)
             {
                 int cuantos = Convert.ToInt32(largoCheque.Text);
-                Properties.Settings.Default.largoCheque = "" + cuantos;
-                largoCheque.Text = Properties.Settings.Default.largoCheque;
+                switch (tipoDeBancoGlobal)
+                {
+                    case 1:
+                        Properties.Settings.Default.largoCheque1 = "" + cuantos;
+                        break;
+                    case 2:
+                        Properties.Settings.Default.largoCheque2 = "" + cuantos;
+                        break;
+                    case 3:
+                        Properties.Settings.Default.largoCheque3 = "" + cuantos;
+                        break;
+                }
+                largoCheque.Text = Convert.ToString(DataBinder.Eval(Properties.Settings.Default, "largoCheque" + tipoDeBancoGlobal));
                 vuelveAHacerElCheque(true);
             }
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
@@ -307,8 +342,19 @@ namespace Cheques
             if (e.KeyChar == 13)
             {
                 int cuantos = Convert.ToInt32(anchoCheque.Text);
-                Properties.Settings.Default.anchoCheque = "" + cuantos;
-                anchoCheque.Text = Properties.Settings.Default.anchoCheque;
+                switch (tipoDeBancoGlobal)
+                {
+                    case 1:
+                        Properties.Settings.Default.anchoCheque1 = "" + cuantos;
+                        break;
+                    case 2:
+                        Properties.Settings.Default.anchoCheque2 = "" + cuantos;
+                        break;
+                    case 3:
+                        Properties.Settings.Default.anchoCheque3 = "" + cuantos;
+                        break;
+                }
+                anchoCheque.Text = Convert.ToString(DataBinder.Eval(Properties.Settings.Default, "anchoCheque" + tipoDeBancoGlobal));
                 vuelveAHacerElCheque(true);
             }
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
@@ -324,8 +370,19 @@ namespace Cheques
             if (e.KeyChar == 13)
             {
                 int cuantos = Convert.ToInt32(topCheque.Text);
-                Properties.Settings.Default.topCheque = "" + cuantos;
-                topCheque.Text = Properties.Settings.Default.topCheque;
+                switch (tipoDeBancoGlobal)
+                {
+                    case 1:
+                        Properties.Settings.Default.topCheque1 = "" + cuantos;
+                        break;
+                    case 2:
+                        Properties.Settings.Default.topCheque2 = "" + cuantos;
+                        break;
+                    case 3:
+                        Properties.Settings.Default.topCheque3 = "" + cuantos;
+                        break;
+                }
+                topCheque.Text = Convert.ToString(DataBinder.Eval(Properties.Settings.Default, "topCheque" + tipoDeBancoGlobal));
                 vuelveAHacerElCheque(true);
             }
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
@@ -341,8 +398,19 @@ namespace Cheques
             if (e.KeyChar == 13)
             {
                 int cuantos = Convert.ToInt32(leftCheque.Text);
-                Properties.Settings.Default.leftCheque = "" + cuantos;
-                leftCheque.Text = Properties.Settings.Default.leftCheque;
+                switch (tipoDeBancoGlobal)
+                {
+                    case 1:
+                        Properties.Settings.Default.leftCheque1 = "" + cuantos;
+                        break;
+                    case 2:
+                        Properties.Settings.Default.leftCheque2 = "" + cuantos;
+                        break;
+                    case 3:
+                        Properties.Settings.Default.leftCheque3 = "" + cuantos;
+                        break;
+                }
+                leftCheque.Text = Convert.ToString(DataBinder.Eval(Properties.Settings.Default, "leftCheque" + tipoDeBancoGlobal));
                 vuelveAHacerElCheque(true);
             }
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
@@ -358,8 +426,19 @@ namespace Cheques
             if (e.KeyChar == 13)
             {
                 int cuantos = Convert.ToInt32(espaciosEntreNombreYTotal.Text);
-                Properties.Settings.Default.espaciosEntreNombreYTotal = "" + cuantos;
-                espaciosEntreNombreYTotal.Text = Properties.Settings.Default.espaciosEntreNombreYTotal;
+               switch (tipoDeBancoGlobal)
+                {
+                    case 1:
+                        Properties.Settings.Default.espaciosEntreNombreYTotal1 = "" + cuantos;
+                        break;
+                    case 2:
+                        Properties.Settings.Default.espaciosEntreNombreYTotal2 = "" + cuantos;
+                        break;
+                    case 3:
+                        Properties.Settings.Default.espaciosEntreNombreYTotal3 = "" + cuantos;
+                        break;
+                }
+               espaciosEntreNombreYTotal.Text = Convert.ToString(DataBinder.Eval(Properties.Settings.Default, "espaciosEntreNombreYTotal" + tipoDeBancoGlobal));
                 vuelveAHacerElCheque(true);
             }
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
@@ -373,8 +452,19 @@ namespace Cheques
             if (e.KeyChar == 13)
             {
                 int cuantos = Convert.ToInt32(entersEntreNombreYLetras.Text);
-                Properties.Settings.Default.entersEntreNombreYLetras = "" + cuantos;
-                entersEntreNombreYLetras.Text = Properties.Settings.Default.entersEntreNombreYLetras;
+                switch (tipoDeBancoGlobal)
+                {
+                    case 1:
+                        Properties.Settings.Default.entersEntreNombreYLetras1 = "" + cuantos;
+                        break;
+                    case 2:
+                        Properties.Settings.Default.entersEntreNombreYLetras2 = "" + cuantos;
+                        break;
+                    case 3:
+                        Properties.Settings.Default.entersEntreNombreYLetras3 = "" + cuantos;
+                        break;
+                }
+                entersEntreNombreYLetras.Text = Convert.ToString(DataBinder.Eval(Properties.Settings.Default, "entersEntreNombreYLetras" + tipoDeBancoGlobal));
                 vuelveAHacerElCheque(true);
             }
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
@@ -389,8 +479,19 @@ namespace Cheques
             if (e.KeyChar == 13)
             {
                 int cuantos = Convert.ToInt32(entersEntreFechaYNombre.Text);
-                Properties.Settings.Default.entersEntreFechaYNombre = "" + cuantos;
-                entersEntreFechaYNombre.Text = Properties.Settings.Default.entersEntreFechaYNombre;
+                switch (tipoDeBancoGlobal)
+                {
+                    case 1:
+                        Properties.Settings.Default.entersEntreFechaYNombre1 = "" + cuantos;
+                        break;
+                    case 2:
+                        Properties.Settings.Default.entersEntreFechaYNombre2 = "" + cuantos;
+                        break;
+                    case 3:
+                        Properties.Settings.Default.entersEntreFechaYNombre3 = "" + cuantos;
+                        break;
+                }
+                entersEntreFechaYNombre.Text = Convert.ToString(DataBinder.Eval(Properties.Settings.Default, "entersEntreFechaYNombre" + tipoDeBancoGlobal));
                 vuelveAHacerElCheque(true);
             }
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
@@ -404,8 +505,19 @@ namespace Cheques
             if (e.KeyChar == 13)
             {
                 int cuantos = Convert.ToInt32(espaciosDeFecha.Text);
-                Properties.Settings.Default.espaciosDeFecha = "" + cuantos;
-                espaciosDeFecha.Text = Properties.Settings.Default.espaciosDeFecha;
+                switch (tipoDeBancoGlobal)
+                {
+                    case 1:
+                        Properties.Settings.Default.espaciosDeFecha1 = "" + cuantos;
+                        break;
+                    case 2:
+                        Properties.Settings.Default.espaciosDeFecha2 = "" + cuantos;
+                        break;
+                    case 3:
+                        Properties.Settings.Default.espaciosDeFecha3 = "" + cuantos;
+                        break;
+                }
+                espaciosDeFecha.Text = Convert.ToString(DataBinder.Eval(Properties.Settings.Default, "espaciosDeFecha" + tipoDeBancoGlobal));
                 vuelveAHacerElCheque(true);
             }
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
@@ -419,8 +531,19 @@ namespace Cheques
             if (e.KeyChar == 13)
             {
                 int cuantos = Convert.ToInt32(espaciosIzquierda.Text);
-                Properties.Settings.Default.sunEspacios = "" + cuantos;
-                espaciosIzquierda.Text = Properties.Settings.Default.sunEspacios;
+                switch (tipoDeBancoGlobal)
+                {
+                    case 1:
+                        Properties.Settings.Default.sunEspacios1 = "" + cuantos;
+                        break;
+                    case 2:
+                        Properties.Settings.Default.sunEspacios2 = "" + cuantos;
+                        break;
+                    case 3:
+                        Properties.Settings.Default.sunEspacios3 = "" + cuantos;
+                        break;
+                }
+                espaciosIzquierda.Text = Convert.ToString(DataBinder.Eval(Properties.Settings.Default, "sunEspacios" + tipoDeBancoGlobal));
                 vuelveAHacerElCheque(true);
             }
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
@@ -434,8 +557,19 @@ namespace Cheques
             if(e.KeyChar==13)
             {
                 int cuantos = Convert.ToInt32(entersPrimeros.Text);
-               Properties.Settings.Default.entersPrimeros = "" + cuantos;
-                entersPrimeros.Text = Properties.Settings.Default.entersPrimeros;
+                switch (tipoDeBancoGlobal)
+                {
+                    case 1:
+                        Properties.Settings.Default.entersPrimeros1 = "" + cuantos;
+                        break;
+                    case 2:
+                        Properties.Settings.Default.entersPrimeros2 = "" + cuantos;
+                        break;
+                    case 3:
+                        Properties.Settings.Default.entersPrimeros3 = "" + cuantos;
+                        break;
+                }
+                entersPrimeros.Text = Convert.ToString(DataBinder.Eval(Properties.Settings.Default, "entersPrimeros" + tipoDeBancoGlobal));
                 vuelveAHacerElCheque(true);
             }
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
@@ -448,109 +582,242 @@ namespace Cheques
 
         private void masEntersPrimeros_Click(object sender, EventArgs e)
         {
-            int cuantos = Convert.ToInt32( Properties.Settings.Default.entersPrimeros);
+            int cuantos = Convert.ToInt32(DataBinder.Eval(Properties.Settings.Default, "entersPrimeros" + tipoDeBancoGlobal));
             cuantos++;
-            Properties.Settings.Default.entersPrimeros = "" + cuantos;
-            entersPrimeros.Text = Properties.Settings.Default.entersPrimeros;
+            switch (tipoDeBancoGlobal)
+            {
+                case 1:
+                    Properties.Settings.Default.entersPrimeros1 = "" + cuantos;
+                    break;
+                case 2:
+                    Properties.Settings.Default.entersPrimeros2 = "" + cuantos;
+                    break;
+                case 3:
+                    Properties.Settings.Default.entersPrimeros3 = "" + cuantos;
+                    break;
+            }
+            entersPrimeros.Text = Convert.ToString(DataBinder.Eval(Properties.Settings.Default, "entersPrimeros" + tipoDeBancoGlobal));
             vuelveAHacerElCheque(true);
         }
 
         private void menosEntersPrimeros_Click(object sender, EventArgs e)
         {
-            int cuantos = Convert.ToInt32(Properties.Settings.Default.entersPrimeros);
+            int cuantos = Convert.ToInt32(DataBinder.Eval(Properties.Settings.Default, "entersPrimeros" + tipoDeBancoGlobal));
             cuantos--;
-            Properties.Settings.Default.entersPrimeros = "" + cuantos;
-            entersPrimeros.Text = Properties.Settings.Default.entersPrimeros;
+            switch (tipoDeBancoGlobal)
+            {
+                case 1:
+                    Properties.Settings.Default.entersPrimeros1 = "" + cuantos;
+                    break;
+                case 2:
+                    Properties.Settings.Default.entersPrimeros2 = "" + cuantos;
+                    break;
+                case 3:
+                    Properties.Settings.Default.entersPrimeros3 = "" + cuantos;
+                    break;
+            }
+            entersPrimeros.Text = Convert.ToString(DataBinder.Eval(Properties.Settings.Default, "entersPrimeros" + tipoDeBancoGlobal));
             vuelveAHacerElCheque(true);
         }
 
         private void menosEspaciosIzquierda_Click(object sender, EventArgs e)
         {
-            int cuantos = Convert.ToInt32(Properties.Settings.Default.sunEspacios);
+            int cuantos = Convert.ToInt32(DataBinder.Eval(Properties.Settings.Default, "sunEspacios" + tipoDeBancoGlobal));
             cuantos--;
-            Properties.Settings.Default.sunEspacios = "" + cuantos;
-            espaciosIzquierda.Text = Properties.Settings.Default.sunEspacios;
+            switch (tipoDeBancoGlobal)
+            {
+                case 1:
+                    Properties.Settings.Default.sunEspacios1 = "" + cuantos;
+                    break;
+                case 2:
+                    Properties.Settings.Default.sunEspacios2 = "" + cuantos;
+                    break;
+                case 3:
+                    Properties.Settings.Default.sunEspacios3 = "" + cuantos;
+                    break;
+            }
+            espaciosIzquierda.Text = Convert.ToString(DataBinder.Eval(Properties.Settings.Default, "sunEspacios" + tipoDeBancoGlobal));
             vuelveAHacerElCheque(true);
         }
 
         private void masEspaciosIzquierda_Click(object sender, EventArgs e)
         {
-            int cuantos = Convert.ToInt32(Properties.Settings.Default.sunEspacios);
+            int cuantos = Convert.ToInt32(DataBinder.Eval(Properties.Settings.Default, "sunEspacios" + tipoDeBancoGlobal));
             cuantos++;
-            Properties.Settings.Default.sunEspacios = "" + cuantos;
-            espaciosIzquierda.Text = Properties.Settings.Default.sunEspacios;
+            switch (tipoDeBancoGlobal)
+            {
+                case 1:
+                    Properties.Settings.Default.sunEspacios1 = "" + cuantos;
+                    break;
+                case 2:
+                    Properties.Settings.Default.sunEspacios2 = "" + cuantos;
+                    break;
+                case 3:
+                    Properties.Settings.Default.sunEspacios3 = "" + cuantos;
+                    break;
+            }
+            espaciosIzquierda.Text = Convert.ToString(DataBinder.Eval(Properties.Settings.Default, "sunEspacios" + tipoDeBancoGlobal));
             vuelveAHacerElCheque(true);
         }
 
         private void menosEspaciosDeFecha_Click(object sender, EventArgs e)
         {
-            int cuantos = Convert.ToInt32(Properties.Settings.Default.espaciosDeFecha);
+            int cuantos = Convert.ToInt32(DataBinder.Eval(Properties.Settings.Default, "espaciosDeFecha" + tipoDeBancoGlobal));
             cuantos--;
-            Properties.Settings.Default.espaciosDeFecha = "" + cuantos;
-            espaciosDeFecha.Text = Properties.Settings.Default.espaciosDeFecha;
+            switch (tipoDeBancoGlobal)
+            {
+                case 1:
+                    Properties.Settings.Default.espaciosDeFecha1 = "" + cuantos;
+                    break;
+                case 2:
+                    Properties.Settings.Default.espaciosDeFecha2 = "" + cuantos;
+                    break;
+                case 3:
+                    Properties.Settings.Default.espaciosDeFecha3 = "" + cuantos;
+                    break;
+            }
+            espaciosDeFecha.Text = Convert.ToString(DataBinder.Eval(Properties.Settings.Default, "espaciosDeFecha" + tipoDeBancoGlobal));
             vuelveAHacerElCheque(true);
         }
 
         private void masEspaciosDeFecha_Click(object sender, EventArgs e)
         {
-            int cuantos = Convert.ToInt32(Properties.Settings.Default.espaciosDeFecha);
+            int cuantos = Convert.ToInt32(DataBinder.Eval(Properties.Settings.Default, "espaciosDeFecha" + tipoDeBancoGlobal));
             cuantos++;
-            Properties.Settings.Default.espaciosDeFecha = "" + cuantos;
-            espaciosDeFecha.Text = Properties.Settings.Default.espaciosDeFecha;
+            switch (tipoDeBancoGlobal)
+            {
+                case 1:
+                    Properties.Settings.Default.espaciosDeFecha1 = "" + cuantos;
+                    break;
+                case 2:
+                    Properties.Settings.Default.espaciosDeFecha2 = "" + cuantos;
+                    break;
+                case 3:
+                    Properties.Settings.Default.espaciosDeFecha3 = "" + cuantos;
+                    break;
+            }
+            espaciosDeFecha.Text = Convert.ToString(DataBinder.Eval(Properties.Settings.Default, "espaciosDeFecha" + tipoDeBancoGlobal));
             vuelveAHacerElCheque(true);
         }
 
         private void menosEntersEntreFechaYNombre_Click(object sender, EventArgs e)
         {
-            int cuantos = Convert.ToInt32(Properties.Settings.Default.entersEntreFechaYNombre);
+            int cuantos = Convert.ToInt32(DataBinder.Eval(Properties.Settings.Default, "entersEntreFechaYNombre" + tipoDeBancoGlobal));
             cuantos--;
-            Properties.Settings.Default.entersEntreFechaYNombre = "" + cuantos;
-            entersEntreFechaYNombre.Text = Properties.Settings.Default.entersEntreFechaYNombre;
+            switch (tipoDeBancoGlobal)
+            {
+                case 1:
+                    Properties.Settings.Default.entersEntreFechaYNombre1 = "" + cuantos;
+                    break;
+                case 2:
+                    Properties.Settings.Default.entersEntreFechaYNombre2 = "" + cuantos;
+                    break;
+                case 3:
+                    Properties.Settings.Default.entersEntreFechaYNombre3 = "" + cuantos;
+                    break;
+            }
+            entersEntreFechaYNombre.Text = Convert.ToString(DataBinder.Eval(Properties.Settings.Default, "entersEntreFechaYNombre" + tipoDeBancoGlobal));
             vuelveAHacerElCheque(true);
         }
 
         private void masEntersEntreFechaYNombre_Click(object sender, EventArgs e)
         {
-            int cuantos = Convert.ToInt32(Properties.Settings.Default.entersEntreFechaYNombre);
+            int cuantos = Convert.ToInt32(DataBinder.Eval(Properties.Settings.Default, "entersEntreFechaYNombre" + tipoDeBancoGlobal));
             cuantos++;
-            Properties.Settings.Default.entersEntreFechaYNombre = "" + cuantos;
-            entersEntreFechaYNombre.Text = Properties.Settings.Default.entersEntreFechaYNombre;
+            switch (tipoDeBancoGlobal)
+            {
+                case 1:
+                    Properties.Settings.Default.entersEntreFechaYNombre1 = "" + cuantos;
+                    break;
+                case 2:
+                    Properties.Settings.Default.entersEntreFechaYNombre2 = "" + cuantos;
+                    break;
+                case 3:
+                    Properties.Settings.Default.entersEntreFechaYNombre3 = "" + cuantos;
+                    break;
+            }
+            Properties.Settings.Default.entersEntreFechaYNombre1 = "" + cuantos;
+            entersEntreFechaYNombre.Text = Convert.ToString(DataBinder.Eval(Properties.Settings.Default, "entersEntreFechaYNombre" + tipoDeBancoGlobal));
             vuelveAHacerElCheque(true);
         }
 
         private void menosEntersEntreNombreYLetras_Click(object sender, EventArgs e)
         {
-             int cuantos = Convert.ToInt32(Properties.Settings.Default.entersEntreNombreYLetras);
+            int cuantos = Convert.ToInt32(DataBinder.Eval(Properties.Settings.Default, "entersEntreNombreYLetras" + tipoDeBancoGlobal));
             cuantos--;
-            Properties.Settings.Default.entersEntreNombreYLetras = "" + cuantos;
-            entersEntreNombreYLetras.Text = Properties.Settings.Default.entersEntreNombreYLetras;
+            switch (tipoDeBancoGlobal)
+            {
+                case 1:
+                    Properties.Settings.Default.entersEntreNombreYLetras1 = "" + cuantos;
+                    break;
+                case 2:
+                    Properties.Settings.Default.entersEntreNombreYLetras2 = "" + cuantos;
+                    break;
+                case 3:
+                    Properties.Settings.Default.entersEntreNombreYLetras3 = "" + cuantos;
+                    break;
+            }
+            entersEntreNombreYLetras.Text = Convert.ToString(DataBinder.Eval(Properties.Settings.Default, "entersEntreNombreYLetras" + tipoDeBancoGlobal));
             vuelveAHacerElCheque(true);
         }
 
         private void masEntersEntreNombreYLetras_Click(object sender, EventArgs e)
         {
-         int cuantos = Convert.ToInt32(Properties.Settings.Default.entersEntreNombreYLetras);
+            int cuantos = Convert.ToInt32(DataBinder.Eval(Properties.Settings.Default, "entersEntreNombreYLetras" + tipoDeBancoGlobal));
             cuantos++;
-            Properties.Settings.Default.entersEntreNombreYLetras = "" + cuantos;
-            entersEntreNombreYLetras.Text = Properties.Settings.Default.entersEntreNombreYLetras;
+            switch (tipoDeBancoGlobal)
+            {
+                case 1:
+                    Properties.Settings.Default.entersEntreNombreYLetras1 = "" + cuantos;
+                    break;
+                case 2:
+                    Properties.Settings.Default.entersEntreNombreYLetras2 = "" + cuantos;
+                    break;
+                case 3:
+                    Properties.Settings.Default.entersEntreNombreYLetras3 = "" + cuantos;
+                    break;
+            }
+            entersEntreNombreYLetras.Text = Convert.ToString(DataBinder.Eval(Properties.Settings.Default, "entersEntreNombreYLetras" + tipoDeBancoGlobal));
             vuelveAHacerElCheque(true);
         }
 
         private void menosEspaciosEntreNombreYTotal_Click(object sender, EventArgs e)
         {
-         int cuantos = Convert.ToInt32(Properties.Settings.Default.espaciosEntreNombreYTotal);
+            int cuantos = Convert.ToInt32(DataBinder.Eval(Properties.Settings.Default, "espaciosEntreNombreYTotal" + tipoDeBancoGlobal));
             cuantos--;
-            Properties.Settings.Default.espaciosEntreNombreYTotal = "" + cuantos;
-            espaciosEntreNombreYTotal.Text = Properties.Settings.Default.espaciosEntreNombreYTotal;
+            switch (tipoDeBancoGlobal)
+            {
+                case 1:
+                    Properties.Settings.Default.espaciosEntreNombreYTotal1 = "" + cuantos;
+                    break;
+                case 2:
+                    Properties.Settings.Default.espaciosEntreNombreYTotal2 = "" + cuantos;
+                    break;
+                case 3:
+                    Properties.Settings.Default.espaciosEntreNombreYTotal3 = "" + cuantos;
+                    break;
+            }
+            espaciosEntreNombreYTotal.Text = Convert.ToString(DataBinder.Eval(Properties.Settings.Default, "espaciosEntreNombreYTotal" + tipoDeBancoGlobal));
             vuelveAHacerElCheque(true);
         }
 
         private void masEspaciosEntreNombreYTotal_Click(object sender, EventArgs e)
         {
-          int cuantos = Convert.ToInt32(Properties.Settings.Default.espaciosEntreNombreYTotal);
+            int cuantos = Convert.ToInt32(DataBinder.Eval(Properties.Settings.Default, "espaciosEntreNombreYTotal" + tipoDeBancoGlobal));
             cuantos++;
-            Properties.Settings.Default.espaciosEntreNombreYTotal = "" + cuantos;
-            espaciosEntreNombreYTotal.Text = Properties.Settings.Default.espaciosEntreNombreYTotal;
+            switch (tipoDeBancoGlobal)
+            {
+                case 1:
+                    Properties.Settings.Default.espaciosEntreNombreYTotal1 = "" + cuantos;
+                    break;
+                case 2:
+                    Properties.Settings.Default.espaciosEntreNombreYTotal2 = "" + cuantos;
+                    break;
+                case 3:
+                    Properties.Settings.Default.espaciosEntreNombreYTotal3 = "" + cuantos;
+                    break;
+            }
+            espaciosEntreNombreYTotal.Text = Convert.ToString(DataBinder.Eval(Properties.Settings.Default, "espaciosEntreNombreYTotal" + tipoDeBancoGlobal));
             vuelveAHacerElCheque(true);
         }
 
@@ -629,75 +896,165 @@ namespace Cheques
 
         private void menosLeftCheque_Click(object sender, EventArgs e)
         {
-            int cuantos = Convert.ToInt32(Properties.Settings.Default.leftCheque );
+            int cuantos = Convert.ToInt32(DataBinder.Eval(Properties.Settings.Default, "leftCheque" + tipoDeBancoGlobal));
             cuantos--;
-            Properties.Settings.Default.leftCheque = "" + cuantos;
-            leftCheque.Text = Properties.Settings.Default.leftCheque;
+            switch (tipoDeBancoGlobal)
+            {
+                case 1:
+                    Properties.Settings.Default.leftCheque1 = "" + cuantos;
+                    break;
+                case 2:
+                    Properties.Settings.Default.leftCheque2 = "" + cuantos;
+                    break;
+                case 3:
+                    Properties.Settings.Default.leftCheque3 = "" + cuantos;
+                    break;
+            }
+            leftCheque.Text = Convert.ToString(DataBinder.Eval(Properties.Settings.Default, "leftCheque" + tipoDeBancoGlobal));
             vuelveAHacerElCheque(true);
         }
 
         private void masLeftCheque_Click(object sender, EventArgs e)
         {
-            int cuantos = Convert.ToInt32(Properties.Settings.Default.leftCheque);
+            int cuantos = Convert.ToInt32(DataBinder.Eval(Properties.Settings.Default, "leftCheque" + tipoDeBancoGlobal));
             cuantos++;
-            Properties.Settings.Default.leftCheque = "" + cuantos;
-            leftCheque.Text = Properties.Settings.Default.leftCheque;
+            switch (tipoDeBancoGlobal)
+            {
+                case 1:
+                    Properties.Settings.Default.leftCheque1 = "" + cuantos;
+                    break;
+                case 2:
+                    Properties.Settings.Default.leftCheque2 = "" + cuantos;
+                    break;
+                case 3:
+                    Properties.Settings.Default.leftCheque3 = "" + cuantos;
+                    break;
+            }
+            leftCheque.Text = Convert.ToString(DataBinder.Eval(Properties.Settings.Default, "leftCheque" + tipoDeBancoGlobal));
             vuelveAHacerElCheque(true);
         }
 
         private void menosTopCheque_Click(object sender, EventArgs e)
         {
-            int cuantos = Convert.ToInt32(Properties.Settings.Default.topCheque);
+            int cuantos = Convert.ToInt32(DataBinder.Eval(Properties.Settings.Default, "topCheque" + tipoDeBancoGlobal));
             cuantos--;
-            Properties.Settings.Default.topCheque = "" + cuantos;
-            topCheque.Text = Properties.Settings.Default.topCheque;
+            switch (tipoDeBancoGlobal)
+            {
+                case 1:
+                    Properties.Settings.Default.topCheque1 = "" + cuantos;
+                    break;
+                case 2:
+                    Properties.Settings.Default.topCheque2 = "" + cuantos;
+                    break;
+                case 3:
+                    Properties.Settings.Default.topCheque3 = "" + cuantos;
+                    break;
+            }
+            topCheque.Text = Convert.ToString(DataBinder.Eval(Properties.Settings.Default, "topCheque" + tipoDeBancoGlobal));
             vuelveAHacerElCheque(true);
         }
 
         private void masTopCheque_Click(object sender, EventArgs e)
         {
-            int cuantos = Convert.ToInt32(Properties.Settings.Default.topCheque);
+            int cuantos = Convert.ToInt32(DataBinder.Eval(Properties.Settings.Default, "topCheque" + tipoDeBancoGlobal));
             cuantos++;
-            Properties.Settings.Default.topCheque = "" + cuantos;
-            topCheque.Text = Properties.Settings.Default.topCheque;
+            switch (tipoDeBancoGlobal)
+            {
+                case 1:
+                    Properties.Settings.Default.topCheque1 = "" + cuantos;
+                    break;
+                case 2:
+                    Properties.Settings.Default.topCheque2 = "" + cuantos;
+                    break;
+                case 3:
+                    Properties.Settings.Default.topCheque3 = "" + cuantos;
+                    break;
+            }
+            topCheque.Text = Convert.ToString(DataBinder.Eval(Properties.Settings.Default, "topCheque" + tipoDeBancoGlobal));
             vuelveAHacerElCheque(true);
         }
 
         private void menosAnchoCheque_Click(object sender, EventArgs e)
         {
-            int cuantos = Convert.ToInt32(Properties.Settings.Default.anchoCheque);
+            int cuantos = Convert.ToInt32(DataBinder.Eval(Properties.Settings.Default, "anchoCheque" + tipoDeBancoGlobal));
             cuantos--;
-            Properties.Settings.Default.anchoCheque = "" + cuantos;
-            anchoCheque.Text = Properties.Settings.Default.anchoCheque;
+            switch (tipoDeBancoGlobal)
+            {
+                case 1:
+                    Properties.Settings.Default.anchoCheque1 = "" + cuantos;
+                    break;
+                case 2:
+                    Properties.Settings.Default.anchoCheque2 = "" + cuantos;
+                    break;
+                case 3:
+                    Properties.Settings.Default.anchoCheque3 = "" + cuantos;
+                    break;
+            }
+            anchoCheque.Text = Convert.ToString(DataBinder.Eval(Properties.Settings.Default, "anchoCheque" + tipoDeBancoGlobal));
             vuelveAHacerElCheque(true);
         }
 
         private void masAnchoCheque_Click(object sender, EventArgs e)
         {
-            int cuantos = Convert.ToInt32(Properties.Settings.Default.anchoCheque);
+            int cuantos = Convert.ToInt32(DataBinder.Eval(Properties.Settings.Default, "anchoCheque" + tipoDeBancoGlobal));
             cuantos++;
-            Properties.Settings.Default.anchoCheque = "" + cuantos;
-            anchoCheque.Text = Properties.Settings.Default.anchoCheque;
+            switch (tipoDeBancoGlobal)
+            {
+                case 1:
+                    Properties.Settings.Default.anchoCheque1 = "" + cuantos;
+                    break;
+                case 2:
+                    Properties.Settings.Default.anchoCheque2 = "" + cuantos;
+                    break;
+                case 3:
+                    Properties.Settings.Default.anchoCheque3 = "" + cuantos;
+                    break;
+            }
+            anchoCheque.Text = Convert.ToString(DataBinder.Eval(Properties.Settings.Default, "anchoCheque" + tipoDeBancoGlobal));
             vuelveAHacerElCheque(true);
         }
 
         private void menosLargoCheque_Click(object sender, EventArgs e)
         {
-            int cuantos = Convert.ToInt32(Properties.Settings.Default.largoCheque);
+            int cuantos = Convert.ToInt32(DataBinder.Eval(Properties.Settings.Default, "largoCheque" + tipoDeBancoGlobal));
             cuantos--;
-            Properties.Settings.Default.largoCheque = "" + cuantos;
-            largoCheque.Text = Properties.Settings.Default.largoCheque;
+            switch (tipoDeBancoGlobal)
+            {
+                case 1:
+                    Properties.Settings.Default.largoCheque1 = "" + cuantos;
+                    break;
+                case 2:
+                    Properties.Settings.Default.largoCheque2 = "" + cuantos;
+                    break;
+                case 3:
+                    Properties.Settings.Default.largoCheque3 = "" + cuantos;
+                    break;
+            }
+            largoCheque.Text = Convert.ToString(DataBinder.Eval(Properties.Settings.Default, "largoCheque" + tipoDeBancoGlobal));
             vuelveAHacerElCheque(true);
         }
 
         private void masLargoCheque_Click(object sender, EventArgs e)
         {
-            int cuantos = Convert.ToInt32(Properties.Settings.Default.largoCheque);
+            int cuantos = Convert.ToInt32(DataBinder.Eval(Properties.Settings.Default, "largoCheque" + tipoDeBancoGlobal));
             cuantos++;
-            Properties.Settings.Default.largoCheque = "" + cuantos;
-            largoCheque.Text = Properties.Settings.Default.largoCheque;
+            switch(tipoDeBancoGlobal)
+            {
+                case 1:
+                    Properties.Settings.Default.largoCheque1 =""+ cuantos;
+                break;
+                case 2:
+                    Properties.Settings.Default.largoCheque2 = "" + cuantos;
+                break;
+                case 3:
+                    Properties.Settings.Default.largoCheque3 = "" + cuantos;
+                break;
+            }
+            largoCheque.Text = Convert.ToString(DataBinder.Eval(Properties.Settings.Default, "largoCheque" + tipoDeBancoGlobal));
             vuelveAHacerElCheque(true);
         }
+
+
      }
 
        

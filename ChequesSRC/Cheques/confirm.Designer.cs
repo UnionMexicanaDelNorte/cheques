@@ -129,6 +129,7 @@
             this.MinimizeBox = false;
             this.Name = "confirm";
             this.Text = "Confirmación";
+            this.Load += new System.EventHandler(this.confirm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

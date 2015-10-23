@@ -22,8 +22,9 @@ namespace Cheques
         public PdfFont ArialBoldItalicToPDF { get; set; }
         public PdfFont TimesNormalToPDF { get; set; }
         public PdfFont ComicToPDF { get; set; }
+        public int tipoDeBancoGlobal { get; set; }
 
-
+        
         public PdfFont ArialNormal { get; set; }
         public PdfFont ArialBold { get; set; }
         public PdfFont ArialItalic { get; set; }
@@ -160,6 +161,34 @@ namespace Cheques
             InitializeComponent();
            
         }
+
+        public confirm(int tipoDeBanco)
+        {
+            InitializeComponent();
+            tipoDeBancoGlobal = tipoDeBanco;
+        }
+
+        public confirm(int tipoDeBanco, String conn, String nombr, String fech, String di, String an, String me, List<Dictionary<string, object>> lista, String tota, String refe, String ana, String source, String acnt, String numero, String numeroDiario2, String pre)
+        {
+            InitializeComponent();
+            tipoDeBancoGlobal = tipoDeBanco;
+            connStringSun = conn;
+            nombre = nombr;
+            fecha = fech;
+            dia = di;
+            ano = an;
+            mes = me;
+            listaFinalconDebitos = lista;
+            total = tota;
+            reference = refe;
+            anal = ana;
+            JRNAL_SRCE = source;
+            ACCNT_CODE = acnt;
+            numeroAletras = numero;
+            numeroDiario = numeroDiario2;
+            preconcepto = pre;
+        }
+                
     
         private void button1_Click(object sender, EventArgs e)
         {
@@ -174,7 +203,7 @@ namespace Cheques
             total = totalT.Text;
             numeroAletras = numeroALetrasT.Text;
 
-            string path = "S:" + (object)Path.DirectorySeparatorChar + "cheques";
+            string path = Properties.Settings.Default.letra+":" + (object)Path.DirectorySeparatorChar + "cheques";
             if (!Directory.Exists(path))
                 Directory.CreateDirectory(path);
 
@@ -348,32 +377,32 @@ namespace Cheques
 
             StringBuilder espacios = new StringBuilder("");
             int j = 0;
-            for (j = 0; j < Convert.ToInt32(Properties.Settings.Default.sunEspacios); j++)
+            for (j = 0; j < Convert.ToInt32(Properties.Settings.Default.sunEspacios1); j++)
             {
                 espacios.Append(" ");
             }
             StringBuilder entersPrimeros = new StringBuilder("");
-            for (j = 0; j < Convert.ToInt32(Properties.Settings.Default.entersPrimeros); j++)
+            for (j = 0; j < Convert.ToInt32(Properties.Settings.Default.entersPrimeros1); j++)
             {
                 entersPrimeros.Append("\n");
             }
             StringBuilder espaciosDeFecha = new StringBuilder("");
-            for (j = 0; j < Convert.ToInt32(Properties.Settings.Default.espaciosDeFecha); j++)
+            for (j = 0; j < Convert.ToInt32(Properties.Settings.Default.espaciosDeFecha1); j++)
             {
                 espaciosDeFecha.Append(" ");
             }
             StringBuilder entersEntreFechaYNombre = new StringBuilder("");
-            for (j = 0; j < Convert.ToInt32(Properties.Settings.Default.entersEntreFechaYNombre); j++)
+            for (j = 0; j < Convert.ToInt32(Properties.Settings.Default.entersEntreFechaYNombre1); j++)
             {
                 entersEntreFechaYNombre.Append("\n");
             }
             StringBuilder entersEntreNombreYLetras = new StringBuilder("");
-            for (j = 0; j < Convert.ToInt32(Properties.Settings.Default.entersEntreNombreYLetras); j++)
+            for (j = 0; j < Convert.ToInt32(Properties.Settings.Default.entersEntreNombreYLetras1); j++)
             {
                 entersEntreNombreYLetras.Append("\n");
             }
             StringBuilder espaciosEntreNombreYTotal = new StringBuilder("");
-            for (j = 0; j < Convert.ToInt32(Properties.Settings.Default.espaciosEntreNombreYTotal); j++)
+            for (j = 0; j < Convert.ToInt32(Properties.Settings.Default.espaciosEntreNombreYTotal1); j++)
             {
                 espaciosEntreNombreYTotal.Append(" ");
             }
@@ -406,8 +435,8 @@ namespace Cheques
             Contents.RestoreGraphicsState();
             Document.CreateFile();
 
-           
-                previewCheque form = new previewCheque();
+
+            previewCheque form = new previewCheque(tipoDeBancoGlobal);
                 form.nombre = nombre;
                 form.total = total;
                 form.concepto = preconcepto;
@@ -423,9 +452,14 @@ namespace Cheques
                 form.FileName = FileName;
                 form.FileNameToPDF = FileNameToPDF;
                 form.vuelveAHacerElCheque(true);
-                form.Show();
+                form.ShowDialog();
             
 
+           
+        }
+
+        private void confirm_Load(object sender, EventArgs e)
+        {
            
         }
     }

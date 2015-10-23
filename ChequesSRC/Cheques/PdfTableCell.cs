@@ -65,7 +65,7 @@ public enum CellType
 	/// <summary>
 	/// Cell's value is barcode.
 	/// </summary>
-	Barcode,
+	Barcode ,
 	}
 
 ////////////////////////////////////////////////////////////////////

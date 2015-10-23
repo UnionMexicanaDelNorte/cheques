@@ -37,8 +37,18 @@ namespace Cheques
             }
         }
         public String connStringSun { get; set; }
-
-        
+        public String fecha { get; set; }
+        public String dia { get; set; }
+        public String mes { get; set; }
+        public String ano { get; set; }
+        public String total { get; set; }
+        public String nombre { get; set; }
+        public String reference { get; set; }
+        public String anal { get; set; }
+        public String JRNAL_SRCE { get; set; }
+        public String ACCNT_CODE { get; set; }
+        public String preconcepto { get; set; }
+        public String numeroAletras { get; set; }
         public List<Dictionary<string, object>> listaFinal { get; set; }
         public List<Dictionary<string, object>> listaFinalconDatos { get; set; }
       
@@ -50,12 +60,7 @@ namespace Cheques
         this.aceptar2.Click += new System.EventHandler(this.aceptar_Click);
 
 
-        this.connStringSun = "Database=" + Properties.Settings.Default.sunDatabase + ";Data Source=" + Properties.Settings.Default.sunDatasource + ";Integrated Security=False;MultipleActiveResultSets=true;User ID='" + Properties.Settings.Default.sunUser + "';Password='" + Properties.Settings.Default.sunPassword + "';connect timeout = 10";     
-            int empiezo = 1;
-            comboBanco2.Items.Add(new Item("ScotiaBank", empiezo));
-            comboBanco2.SelectedIndex = 0;
-            empiezo++;
-        }
+          }
 
         private void label2_Click(object sender, EventArgs e)
         {
@@ -241,103 +246,89 @@ namespace Cheques
         private bool deboEntrar;
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-           this.Cursor = System.Windows.Forms.Cursors.WaitCursor;
-           
-            if(deboEntrar)
+            if(listView1.SelectedItems.Count>0)
             {
-                string path = "S:" + (object)Path.DirectorySeparatorChar + "cheques";
-                if (!Directory.Exists(path))
-                    Directory.CreateDirectory(path);
+                Item itm = (Item)comboBanco2.SelectedItem;
 
-                DateTime dateTime = dateTimePicker1.Value;// DateTime.UtcNow.Date;
+                confirm formC = null;
 
-                String fecha = dateTime.ToString("dd 'de' MMMM 'de' yyyy");
-                // add text to the text box
-                String dia = dateTime.ToString("dd");
-                String mes = dateTime.ToString("MMMM");
-                String ano = dateTime.ToString("yyyy");
-                
+                this.Cursor = System.Windows.Forms.Cursors.WaitCursor;
 
-                String total = listView1.SelectedItems[0].SubItems[1].Text.ToString().Trim();
-                String nombre = listView1.SelectedItems[0].SubItems[0].Text.ToString().Trim();
-                String reference = listView1.SelectedItems[0].SubItems[2].Text.ToString().Trim();
-                String anal = listView1.SelectedItems[0].SubItems[3].Text.ToString().Trim();
-                String JRNAL_SRCE = listView1.SelectedItems[0].SubItems[4].Text.ToString().Trim();
-                String ACCNT_CODE = listView1.SelectedItems[0].SubItems[5].Text.ToString().Trim();
-
-                //    String total = last.SubItems[1].Text.ToString();
-                //  String nombre = last.SubItems[0].Text.ToString();
-
-                String numeroAletras = "(SON: " + Conversiones.NumeroALetras(total) + " M.N.)";
-
-
-                confirm formC = new confirm();
-                formC.connStringSun = this.connStringSun;
-                formC.nombre = nombre;
-                formC.fecha = fecha;
-                formC.dia = dia;
-                formC.ano = ano;
-                formC.mes = mes;
-                formC.listaFinalconDebitos = listaFinalconDatos;
-                formC.total = total;
-                formC.reference = reference;
-                formC.anal = anal;
-                formC.JRNAL_SRCE = JRNAL_SRCE;
-                formC.ACCNT_CODE = ACCNT_CODE;
-                formC.numeroAletras = numeroAletras;
-               
-                String preconcepto = "";
-                bool first = true;
-                try
+                if (deboEntrar)
                 {
-                    using (SqlConnection connection = new SqlConnection(connStringSun))
+
+                    string path = Properties.Settings.Default.letra + ":" + (object)Path.DirectorySeparatorChar + "cheques";
+                    if (!Directory.Exists(path))
+                        Directory.CreateDirectory(path);
+
+                    DateTime dateTime = dateTimePicker1.Value;// DateTime.UtcNow.Date;
+
+                    fecha = dateTime.ToString("dd 'de' MMMM 'de' yyyy");
+                    // add text to the text box
+                    dia = dateTime.ToString("dd");
+                    mes = dateTime.ToString("MMMM");
+                    ano = dateTime.ToString("yyyy");
+
+
+                    total = listView1.SelectedItems[0].SubItems[1].Text.ToString().Trim();
+                    nombre = listView1.SelectedItems[0].SubItems[0].Text.ToString().Trim();
+                    reference = listView1.SelectedItems[0].SubItems[2].Text.ToString().Trim();
+                    anal = listView1.SelectedItems[0].SubItems[3].Text.ToString().Trim();
+                    JRNAL_SRCE = listView1.SelectedItems[0].SubItems[4].Text.ToString().Trim();
+                    ACCNT_CODE = listView1.SelectedItems[0].SubItems[5].Text.ToString().Trim();
+
+                    //    String total = last.SubItems[1].Text.ToString();
+                    //  String nombre = last.SubItems[0].Text.ToString();
+
+                    numeroAletras = "(SON: " + Conversiones.NumeroALetras(total) + " M.N.)";
+
+                    bool first = true;
+                    try
                     {
-                        connection.Open();
-                        foreach (Dictionary<string, object> dic in listaFinalconDatos)
+                        using (SqlConnection connection = new SqlConnection(connStringSun))
                         {
-                            if (dic.ContainsKey("nombre"))
+                            connection.Open();
+                            foreach (Dictionary<string, object> dic in listaFinalconDatos)
                             {
-                                String analPrima = Convert.ToString(dic["anal"]).Trim();
-                                String totalPrima = Convert.ToString(dic["total"]).Trim();
-
-                                String ACCNT_CODEPrima = Convert.ToString(dic["ACCNT_CODE"]).Trim();
-                                if (analPrima.Equals(anal) && first)
+                                if (dic.ContainsKey("nombre"))
                                 {
-                                    first = false;
-                                    preconcepto = Convert.ToString(dic["nombre"]).Trim();
-                               /*
-                                    String paraVer2 = Convert.ToString(dic["ACCNT_CODE"]).Trim();
+                                    String analPrima = Convert.ToString(dic["anal"]).Trim();
+                                    String totalPrima = Convert.ToString(dic["total"]).Trim();
 
-                                    String queryDiario = "SELECT DESCR FROM [" + Properties.Settings.Default.sunDatabase + "].[dbo].[" + Properties.Settings.Default.sunUnidadDeNegocio + "_ACNT] WHERE ACNT_CODE = '" + paraVer2 + "'";
-                                    SqlCommand cmdCheck = new SqlCommand(queryDiario, connection);
-                                    SqlDataReader reader = cmdCheck.ExecuteReader();
-                                    if (reader.HasRows)
+                                    String ACCNT_CODEPrima = Convert.ToString(dic["ACCNT_CODE"]).Trim();
+                                    if (analPrima.Equals(anal) && first)
                                     {
-                                        while (reader.Read())
-                                        {
-                                            preconcepto = reader.GetString(0);
-                                        }
-                                    }*/
+                                        first = false;
+                                        preconcepto = Convert.ToString(dic["nombre"]).Trim();
+                                        /*
+                                             String paraVer2 = Convert.ToString(dic["ACCNT_CODE"]).Trim();
+
+                                             String queryDiario = "SELECT DESCR FROM [" + Properties.Settings.Default.sunDatabase + "].[dbo].[" + Properties.Settings.Default.sunUnidadDeNegocio + "_ACNT] WHERE ACNT_CODE = '" + paraVer2 + "'";
+                                             SqlCommand cmdCheck = new SqlCommand(queryDiario, connection);
+                                             SqlDataReader reader = cmdCheck.ExecuteReader();
+                                             if (reader.HasRows)
+                                             {
+                                                 while (reader.Read())
+                                                 {
+                                                     preconcepto = reader.GetString(0);
+                                                 }
+                                             }*/
+                                    }
                                 }
                             }
+
+
                         }
-                       
-                        
                     }
-                }
-                catch (Exception ex)
-                {
-                    System.Windows.Forms.MessageBox.Show(ex.ToString(), "Error Title", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                }
+                    catch (Exception ex)
+                    {
+                        System.Windows.Forms.MessageBox.Show(ex.ToString(), "Cheques Sunplusito", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
 
 
 
-                formC.numeroDiario = numeroDiario2.Text.Trim();
-                formC.preconcepto = preconcepto;
-                formC.rellena();
-                formC.Show();
 
-               
+
                     if (listView1.SelectedIndices.Count > 0)
                     {
                         for (int i = 0; i < listView1.SelectedIndices.Count; i++)
@@ -348,13 +339,21 @@ namespace Cheques
                             hola.Selected = false;
                         }
                     }
-                
+
+                }
+                else
+                {
+                    deboEntrar = true;
+                }
+                this.Cursor = System.Windows.Forms.Cursors.Arrow;
+                formC = new confirm(itm.Value, connStringSun, nombre, fecha, dia, ano, mes, listaFinalconDatos, total, reference, anal, JRNAL_SRCE, ACCNT_CODE, numeroAletras, numeroDiario2.Text.Trim(), preconcepto);
+
+                formC.rellena();
+
+                formC.ShowDialog();
             }
-            else
-            {
-                deboEntrar = true;
-            }
-              this.Cursor = System.Windows.Forms.Cursors.Arrow;
+           
+
           
         }
 
@@ -399,6 +398,12 @@ namespace Cheques
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            this.connStringSun = "Database=" + Properties.Settings.Default.sunDatabase + ";Data Source=" + Properties.Settings.Default.sunDatasource + ";Integrated Security=False;MultipleActiveResultSets=true;User ID='" + Properties.Settings.Default.sunUser + "';Password='" + Properties.Settings.Default.sunPassword + "';connect timeout = 10";
+            comboBanco2.Items.Add(new Item("ScotiaBank", 1));
+            comboBanco2.Items.Add(new Item("Santander", 2));
+            comboBanco2.Items.Add(new Item("Bancomer", 3));
+            comboBanco2.SelectedIndex = 0;
+  
             this.numeroDiario2.Focus();
      
             numeroDiario2.KeyPress += numeroDiario_KeyPress;

@@ -49,13 +49,14 @@
             this.configuracionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.servidorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.verToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.chequesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.porNúmeroDeDiarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.porMesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -106,7 +107,7 @@
             this.comboBanco.FormattingEnabled = true;
             this.comboBanco.Location = new System.Drawing.Point(457, 120);
             this.comboBanco.Name = "comboBanco";
-            this.comboBanco.Size = new System.Drawing.Size(233, 33);
+            this.comboBanco.Size = new System.Drawing.Size(233, 34);
             this.comboBanco.TabIndex = 5;
             // 
             // label3
@@ -121,17 +122,19 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.06283F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(51, 55);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(283, 26);
+            this.label4.Size = new System.Drawing.Size(275, 38);
             this.label4.TabIndex = 0;
-            this.label4.Text = "Escribe el numero de diario:";
+            this.label4.Text = "Número de diario:";
             // 
             // cancelar2
             // 
-            this.cancelar2.Location = new System.Drawing.Point(416, 204);
+            this.cancelar2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.06283F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cancelar2.Location = new System.Drawing.Point(416, 188);
             this.cancelar2.Name = "cancelar2";
-            this.cancelar2.Size = new System.Drawing.Size(278, 47);
+            this.cancelar2.Size = new System.Drawing.Size(278, 63);
             this.cancelar2.TabIndex = 1;
             this.cancelar2.Text = "Cancelar";
             this.cancelar2.UseVisualStyleBackColor = true;
@@ -139,34 +142,38 @@
             // 
             // comboBanco2
             // 
+            this.comboBanco2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.06283F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBanco2.FormattingEnabled = true;
             this.comboBanco2.Location = new System.Drawing.Point(416, 118);
             this.comboBanco2.Name = "comboBanco2";
-            this.comboBanco2.Size = new System.Drawing.Size(278, 33);
+            this.comboBanco2.Size = new System.Drawing.Size(278, 45);
             this.comboBanco2.TabIndex = 2;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.06283F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(416, 55);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(80, 26);
+            this.label5.Size = new System.Drawing.Size(119, 38);
             this.label5.TabIndex = 3;
             this.label5.Text = "Banco:";
             // 
             // numeroDiario2
             // 
+            this.numeroDiario2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.06283F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numeroDiario2.Location = new System.Drawing.Point(56, 118);
             this.numeroDiario2.Name = "numeroDiario2";
-            this.numeroDiario2.Size = new System.Drawing.Size(278, 31);
+            this.numeroDiario2.Size = new System.Drawing.Size(278, 44);
             this.numeroDiario2.TabIndex = 4;
             this.numeroDiario2.TextChanged += new System.EventHandler(this.numeroDiario2_TextChanged);
             // 
             // aceptar2
             // 
-            this.aceptar2.Location = new System.Drawing.Point(56, 204);
+            this.aceptar2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.06283F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aceptar2.Location = new System.Drawing.Point(56, 188);
             this.aceptar2.Name = "aceptar2";
-            this.aceptar2.Size = new System.Drawing.Size(278, 47);
+            this.aceptar2.Size = new System.Drawing.Size(278, 63);
             this.aceptar2.TabIndex = 5;
             this.aceptar2.Text = "Aceptar";
             this.aceptar2.UseVisualStyleBackColor = true;
@@ -174,29 +181,33 @@
             // 
             // listView1
             // 
+            this.listView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.06283F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listView1.Location = new System.Drawing.Point(56, 308);
+            this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(1274, 266);
+            this.listView1.Size = new System.Drawing.Size(1274, 501);
             this.listView1.TabIndex = 6;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.06283F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Location = new System.Drawing.Point(768, 116);
             this.dateTimePicker1.MaxDate = new System.DateTime(2030, 12, 31, 0, 0, 0, 0);
             this.dateTimePicker1.MinDate = new System.DateTime(2015, 1, 1, 0, 0, 0, 0);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(562, 31);
+            this.dateTimePicker1.Size = new System.Drawing.Size(562, 44);
             this.dateTimePicker1.TabIndex = 7;
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.06283F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(763, 55);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(190, 26);
+            this.label6.Size = new System.Drawing.Size(285, 38);
             this.label6.TabIndex = 8;
             this.label6.Text = "Fecha del cheque:";
             // 
@@ -209,7 +220,7 @@
             this.ayudaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1389, 43);
+            this.menuStrip1.Size = new System.Drawing.Size(1366, 43);
             this.menuStrip1.TabIndex = 9;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -236,31 +247,6 @@
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
-            // ayudaToolStripMenuItem
-            // 
-            this.ayudaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.acercaDeToolStripMenuItem});
-            this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
-            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(97, 39);
-            this.ayudaToolStripMenuItem.Text = "Ayuda";
-            // 
-            // acercaDeToolStripMenuItem
-            // 
-            this.acercaDeToolStripMenuItem.Name = "acercaDeToolStripMenuItem";
-            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(243, 40);
-            this.acercaDeToolStripMenuItem.Text = "Acerca de";
-            this.acercaDeToolStripMenuItem.Click += new System.EventHandler(this.acercaDeToolStripMenuItem_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(744, 170);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(586, 121);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 10;
-            this.pictureBox1.TabStop = false;
-            // 
             // verToolStripMenuItem
             // 
             this.verToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -275,7 +261,7 @@
             this.porNúmeroDeDiarioToolStripMenuItem,
             this.porMesToolStripMenuItem});
             this.chequesToolStripMenuItem.Name = "chequesToolStripMenuItem";
-            this.chequesToolStripMenuItem.Size = new System.Drawing.Size(243, 40);
+            this.chequesToolStripMenuItem.Size = new System.Drawing.Size(185, 40);
             this.chequesToolStripMenuItem.Text = "Cheques";
             // 
             // porNúmeroDeDiarioToolStripMenuItem
@@ -292,13 +278,48 @@
             this.porMesToolStripMenuItem.Text = "Por mes";
             this.porMesToolStripMenuItem.Click += new System.EventHandler(this.porMesToolStripMenuItem_Click);
             // 
+            // ayudaToolStripMenuItem
+            // 
+            this.ayudaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.acercaDeToolStripMenuItem});
+            this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
+            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(97, 39);
+            this.ayudaToolStripMenuItem.Text = "Ayuda";
+            // 
+            // acercaDeToolStripMenuItem
+            // 
+            this.acercaDeToolStripMenuItem.Name = "acercaDeToolStripMenuItem";
+            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(200, 40);
+            this.acercaDeToolStripMenuItem.Text = "Acerca de";
+            this.acercaDeToolStripMenuItem.Click += new System.EventHandler(this.acercaDeToolStripMenuItem_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(744, 170);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(586, 121);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(1337, 806);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(18, 26);
+            this.label7.TabIndex = 11;
+            this.label7.Text = ".";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1389, 633);
+            this.ClientSize = new System.Drawing.Size(1366, 835);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.dateTimePicker1);
@@ -355,6 +376,7 @@
         private System.Windows.Forms.ToolStripMenuItem chequesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem porNúmeroDeDiarioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem porMesToolStripMenuItem;
+        private System.Windows.Forms.Label label7;
     }
 }
 

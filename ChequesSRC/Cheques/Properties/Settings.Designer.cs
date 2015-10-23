@@ -98,12 +98,12 @@ namespace Cheques.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("102")]
-        public string sunEspacios {
+        public string sunEspacios1 {
             get {
-                return ((string)(this["sunEspacios"]));
+                return ((string)(this["sunEspacios1"]));
             }
             set {
-                this["sunEspacios"] = value;
+                this["sunEspacios1"] = value;
             }
         }
         
@@ -122,108 +122,108 @@ namespace Cheques.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("7")]
-        public string entersPrimeros {
+        public string entersPrimeros1 {
             get {
-                return ((string)(this["entersPrimeros"]));
+                return ((string)(this["entersPrimeros1"]));
             }
             set {
-                this["entersPrimeros"] = value;
+                this["entersPrimeros1"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("182")]
-        public string espaciosDeFecha {
+        public string espaciosDeFecha1 {
             get {
-                return ((string)(this["espaciosDeFecha"]));
+                return ((string)(this["espaciosDeFecha1"]));
             }
             set {
-                this["espaciosDeFecha"] = value;
+                this["espaciosDeFecha1"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("4")]
-        public string entersEntreFechaYNombre {
+        public string entersEntreFechaYNombre1 {
             get {
-                return ((string)(this["entersEntreFechaYNombre"]));
+                return ((string)(this["entersEntreFechaYNombre1"]));
             }
             set {
-                this["entersEntreFechaYNombre"] = value;
+                this["entersEntreFechaYNombre1"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("2")]
-        public string entersEntreNombreYLetras {
+        public string entersEntreNombreYLetras1 {
             get {
-                return ((string)(this["entersEntreNombreYLetras"]));
+                return ((string)(this["entersEntreNombreYLetras1"]));
             }
             set {
-                this["entersEntreNombreYLetras"] = value;
+                this["entersEntreNombreYLetras1"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("64")]
-        public string espaciosEntreNombreYTotal {
+        public string espaciosEntreNombreYTotal1 {
             get {
-                return ((string)(this["espaciosEntreNombreYTotal"]));
+                return ((string)(this["espaciosEntreNombreYTotal1"]));
             }
             set {
-                this["espaciosEntreNombreYTotal"] = value;
+                this["espaciosEntreNombreYTotal1"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("220")]
-        public string leftCheque {
+        public string leftCheque1 {
             get {
-                return ((string)(this["leftCheque"]));
+                return ((string)(this["leftCheque1"]));
             }
             set {
-                this["leftCheque"] = value;
+                this["leftCheque1"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("52")]
-        public string topCheque {
+        public string topCheque1 {
             get {
-                return ((string)(this["topCheque"]));
+                return ((string)(this["topCheque1"]));
             }
             set {
-                this["topCheque"] = value;
+                this["topCheque1"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("420")]
-        public string anchoCheque {
+        public string anchoCheque1 {
             get {
-                return ((string)(this["anchoCheque"]));
+                return ((string)(this["anchoCheque1"]));
             }
             set {
-                this["anchoCheque"] = value;
+                this["anchoCheque1"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("192")]
-        public string largoCheque {
+        public string largoCheque1 {
             get {
-                return ((string)(this["largoCheque"]));
+                return ((string)(this["largoCheque1"]));
             }
             set {
-                this["largoCheque"] = value;
+                this["largoCheque1"] = value;
             }
         }
         
@@ -236,6 +236,258 @@ namespace Cheques.Properties {
             }
             set {
                 this["DatabaseCheques"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("S")]
+        public string letra {
+            get {
+                return ((string)(this["letra"]));
+            }
+            set {
+                this["letra"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("102")]
+        public string sunEspacios2 {
+            get {
+                return ((string)(this["sunEspacios2"]));
+            }
+            set {
+                this["sunEspacios2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("102")]
+        public string sunEspacios3 {
+            get {
+                return ((string)(this["sunEspacios3"]));
+            }
+            set {
+                this["sunEspacios3"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("7")]
+        public string entersPrimeros2 {
+            get {
+                return ((string)(this["entersPrimeros2"]));
+            }
+            set {
+                this["entersPrimeros2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("7")]
+        public string entersPrimeros3 {
+            get {
+                return ((string)(this["entersPrimeros3"]));
+            }
+            set {
+                this["entersPrimeros3"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("182")]
+        public string espaciosDeFecha2 {
+            get {
+                return ((string)(this["espaciosDeFecha2"]));
+            }
+            set {
+                this["espaciosDeFecha2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("182")]
+        public string espaciosDeFecha3 {
+            get {
+                return ((string)(this["espaciosDeFecha3"]));
+            }
+            set {
+                this["espaciosDeFecha3"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("4")]
+        public string entersEntreFechaYNombre2 {
+            get {
+                return ((string)(this["entersEntreFechaYNombre2"]));
+            }
+            set {
+                this["entersEntreFechaYNombre2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("4")]
+        public string entersEntreFechaYNombre3 {
+            get {
+                return ((string)(this["entersEntreFechaYNombre3"]));
+            }
+            set {
+                this["entersEntreFechaYNombre3"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("2")]
+        public string entersEntreNombreYLetras2 {
+            get {
+                return ((string)(this["entersEntreNombreYLetras2"]));
+            }
+            set {
+                this["entersEntreNombreYLetras2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("2")]
+        public string entersEntreNombreYLetras3 {
+            get {
+                return ((string)(this["entersEntreNombreYLetras3"]));
+            }
+            set {
+                this["entersEntreNombreYLetras3"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("64")]
+        public string espaciosEntreNombreYTotal2 {
+            get {
+                return ((string)(this["espaciosEntreNombreYTotal2"]));
+            }
+            set {
+                this["espaciosEntreNombreYTotal2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("64")]
+        public string espaciosEntreNombreYTotal3 {
+            get {
+                return ((string)(this["espaciosEntreNombreYTotal3"]));
+            }
+            set {
+                this["espaciosEntreNombreYTotal3"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("220")]
+        public string leftCheque2 {
+            get {
+                return ((string)(this["leftCheque2"]));
+            }
+            set {
+                this["leftCheque2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("220")]
+        public string leftCheque3 {
+            get {
+                return ((string)(this["leftCheque3"]));
+            }
+            set {
+                this["leftCheque3"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("52")]
+        public string topCheque2 {
+            get {
+                return ((string)(this["topCheque2"]));
+            }
+            set {
+                this["topCheque2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("52")]
+        public string topCheque3 {
+            get {
+                return ((string)(this["topCheque3"]));
+            }
+            set {
+                this["topCheque3"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("420")]
+        public string anchoCheque2 {
+            get {
+                return ((string)(this["anchoCheque2"]));
+            }
+            set {
+                this["anchoCheque2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("420")]
+        public string anchoCheque3 {
+            get {
+                return ((string)(this["anchoCheque3"]));
+            }
+            set {
+                this["anchoCheque3"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("192")]
+        public string largoCheque2 {
+            get {
+                return ((string)(this["largoCheque2"]));
+            }
+            set {
+                this["largoCheque2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("192")]
+        public string largoCheque3 {
+            get {
+                return ((string)(this["largoCheque3"]));
+            }
+            set {
+                this["largoCheque3"] = value;
             }
         }
     }

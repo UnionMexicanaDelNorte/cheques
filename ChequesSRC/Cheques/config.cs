@@ -41,7 +41,7 @@ namespace Cheques
             password.Text = Properties.Settings.Default.sunPassword;
             DatabaseCheques.Text = Properties.Settings.Default.DatabaseCheques;
             libro.Text = Properties.Settings.Default.sunLibro;
-
+            letraText.Text = Properties.Settings.Default.letra;
             unidad.Text = Properties.Settings.Default.sunUnidadDeNegocio;
           
             
@@ -86,6 +86,7 @@ namespace Cheques
             Properties.Settings.Default.sunLibro = libro.Text;
             Properties.Settings.Default.sunUnidadDeNegocio = unidad.Text;
             Properties.Settings.Default.DatabaseCheques = DatabaseCheques.Text;
+            Properties.Settings.Default.letra = letraText.Text;
             Properties.Settings.Default.Save();
         }
         private void button1_Click(object sender, EventArgs e)

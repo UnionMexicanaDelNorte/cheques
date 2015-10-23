@@ -20,41 +20,104 @@
     <Setting Name="sunUnidadDeNegocio" Type="System.String" Scope="User">
       <Value Profile="(Default)">CEA</Value>
     </Setting>
-    <Setting Name="sunEspacios" Type="System.String" Scope="User">
+    <Setting Name="sunEspacios1" Type="System.String" Scope="User">
       <Value Profile="(Default)">102</Value>
     </Setting>
     <Setting Name="sunImpresionDirecta" Type="System.String" Scope="User">
       <Value Profile="(Default)">1</Value>
     </Setting>
-    <Setting Name="entersPrimeros" Type="System.String" Scope="User">
+    <Setting Name="entersPrimeros1" Type="System.String" Scope="User">
       <Value Profile="(Default)">7</Value>
     </Setting>
-    <Setting Name="espaciosDeFecha" Type="System.String" Scope="User">
+    <Setting Name="espaciosDeFecha1" Type="System.String" Scope="User">
       <Value Profile="(Default)">182</Value>
     </Setting>
-    <Setting Name="entersEntreFechaYNombre" Type="System.String" Scope="User">
+    <Setting Name="entersEntreFechaYNombre1" Type="System.String" Scope="User">
       <Value Profile="(Default)">4</Value>
     </Setting>
-    <Setting Name="entersEntreNombreYLetras" Type="System.String" Scope="User">
+    <Setting Name="entersEntreNombreYLetras1" Type="System.String" Scope="User">
       <Value Profile="(Default)">2</Value>
     </Setting>
-    <Setting Name="espaciosEntreNombreYTotal" Type="System.String" Scope="User">
+    <Setting Name="espaciosEntreNombreYTotal1" Type="System.String" Scope="User">
       <Value Profile="(Default)">64</Value>
     </Setting>
-    <Setting Name="leftCheque" Type="System.String" Scope="User">
+    <Setting Name="leftCheque1" Type="System.String" Scope="User">
       <Value Profile="(Default)">220</Value>
     </Setting>
-    <Setting Name="topCheque" Type="System.String" Scope="User">
+    <Setting Name="topCheque1" Type="System.String" Scope="User">
       <Value Profile="(Default)">52</Value>
     </Setting>
-    <Setting Name="anchoCheque" Type="System.String" Scope="User">
+    <Setting Name="anchoCheque1" Type="System.String" Scope="User">
       <Value Profile="(Default)">420</Value>
     </Setting>
-    <Setting Name="largoCheque" Type="System.String" Scope="User">
+    <Setting Name="largoCheque1" Type="System.String" Scope="User">
       <Value Profile="(Default)">192</Value>
     </Setting>
     <Setting Name="DatabaseCheques" Type="System.String" Scope="User">
       <Value Profile="(Default)">SUNPLUSCHEQUES</Value>
+    </Setting>
+    <Setting Name="letra" Type="System.String" Scope="User">
+      <Value Profile="(Default)">S</Value>
+    </Setting>
+    <Setting Name="sunEspacios2" Type="System.String" Scope="User">
+      <Value Profile="(Default)">102</Value>
+    </Setting>
+    <Setting Name="sunEspacios3" Type="System.String" Scope="User">
+      <Value Profile="(Default)">102</Value>
+    </Setting>
+    <Setting Name="entersPrimeros2" Type="System.String" Scope="User">
+      <Value Profile="(Default)">7</Value>
+    </Setting>
+    <Setting Name="entersPrimeros3" Type="System.String" Scope="User">
+      <Value Profile="(Default)">7</Value>
+    </Setting>
+    <Setting Name="espaciosDeFecha2" Type="System.String" Scope="User">
+      <Value Profile="(Default)">182</Value>
+    </Setting>
+    <Setting Name="espaciosDeFecha3" Type="System.String" Scope="User">
+      <Value Profile="(Default)">182</Value>
+    </Setting>
+    <Setting Name="entersEntreFechaYNombre2" Type="System.String" Scope="User">
+      <Value Profile="(Default)">4</Value>
+    </Setting>
+    <Setting Name="entersEntreFechaYNombre3" Type="System.String" Scope="User">
+      <Value Profile="(Default)">4</Value>
+    </Setting>
+    <Setting Name="entersEntreNombreYLetras2" Type="System.String" Scope="User">
+      <Value Profile="(Default)">2</Value>
+    </Setting>
+    <Setting Name="entersEntreNombreYLetras3" Type="System.String" Scope="User">
+      <Value Profile="(Default)">2</Value>
+    </Setting>
+    <Setting Name="espaciosEntreNombreYTotal2" Type="System.String" Scope="User">
+      <Value Profile="(Default)">64</Value>
+    </Setting>
+    <Setting Name="espaciosEntreNombreYTotal3" Type="System.String" Scope="User">
+      <Value Profile="(Default)">64</Value>
+    </Setting>
+    <Setting Name="leftCheque2" Type="System.String" Scope="User">
+      <Value Profile="(Default)">220</Value>
+    </Setting>
+    <Setting Name="leftCheque3" Type="System.String" Scope="User">
+      <Value Profile="(Default)">220</Value>
+    </Setting>
+    <Setting Name="topCheque2" Type="System.String" Scope="User">
+      <Value Profile="(Default)">52</Value>
+    </Setting>
+    <Setting Name="topCheque3" Type="System.String" Scope="User">
+      <Value Profile="(Default)">52</Value>
+    </Setting>
+    <Setting Name="anchoCheque2" Type="System.String" Scope="User">
+      <Value Profile="(Default)">420</Value>
+    </Setting>
+    <Setting Name="anchoCheque3" Type="System.String" Scope="User">
+      <Value Profile="(Default)">420</Value>
+    </Setting>
+    <Setting Name="largoCheque2" Type="System.String" Scope="User">
+      <Value Profile="(Default)">192</Value>
+    </Setting>
+    <Setting Name="largoCheque3" Type="System.String" Scope="User">
+      <Value Profile="(Default)">192</Value>
     </Setting>
   </Settings>
 </SettingsFile>
