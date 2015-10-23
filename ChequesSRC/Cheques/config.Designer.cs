@@ -48,6 +48,14 @@
             this.DatabaseCheques = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.letraText = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.campo = new System.Windows.Forms.TextBox();
+            this.calle = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.colonia = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.ciudad = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // database
@@ -209,13 +217,85 @@
             this.letraText.Size = new System.Drawing.Size(261, 31);
             this.letraText.TabIndex = 21;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(499, 52);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(89, 26);
+            this.label9.TabIndex = 22;
+            this.label9.Text = "Campo:";
+            // 
+            // campo
+            // 
+            this.campo.Location = new System.Drawing.Point(504, 113);
+            this.campo.Name = "campo";
+            this.campo.Size = new System.Drawing.Size(366, 31);
+            this.campo.TabIndex = 23;
+            // 
+            // calle
+            // 
+            this.calle.Location = new System.Drawing.Point(504, 236);
+            this.calle.Name = "calle";
+            this.calle.Size = new System.Drawing.Size(366, 31);
+            this.calle.TabIndex = 25;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(499, 175);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(165, 26);
+            this.label10.TabIndex = 24;
+            this.label10.Text = "Calle y numero:";
+            // 
+            // colonia
+            // 
+            this.colonia.Location = new System.Drawing.Point(504, 371);
+            this.colonia.Name = "colonia";
+            this.colonia.Size = new System.Drawing.Size(366, 31);
+            this.colonia.TabIndex = 27;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(499, 310);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(92, 26);
+            this.label11.TabIndex = 26;
+            this.label11.Text = "Colonia:";
+            // 
+            // ciudad
+            // 
+            this.ciudad.Location = new System.Drawing.Point(507, 513);
+            this.ciudad.Name = "ciudad";
+            this.ciudad.Size = new System.Drawing.Size(366, 31);
+            this.ciudad.TabIndex = 29;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(502, 452);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(175, 26);
+            this.label12.TabIndex = 28;
+            this.label12.Text = "Ciudad y estado:";
+            // 
             // config
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(517, 1030);
+            this.ClientSize = new System.Drawing.Size(1046, 1030);
+            this.Controls.Add(this.ciudad);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.colonia);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.calle);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.campo);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.letraText);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.DatabaseCheques);
@@ -267,5 +347,13 @@
         private System.Windows.Forms.TextBox DatabaseCheques;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox letraText;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox campo;
+        private System.Windows.Forms.TextBox calle;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox colonia;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox ciudad;
+        private System.Windows.Forms.Label label12;
     }
 }

@@ -353,11 +353,11 @@ namespace Cheques
             }
             String aver = "\n\n\n\n\n" +
             space +
-            "Unión Mexicana del Norte" +
+            Properties.Settings.Default.campo +
             "\n" + space +
-            "Carretera Nacional Km 205" + "\n" + space +
-            "       El Desague                                        Fecha: " + fecha + "\n" + space +
-            "Montemorelos, Nuevo León                     Reference: " + anal + "\n" +
+            Properties.Settings.Default.calle + "\n" + space +
+            "       " + Properties.Settings.Default.colonia + "                                        Fecha: " + fecha + "\n" + space +
+            Properties.Settings.Default.ciudad+"                     Reference: " + anal + "\n" +
             "\n\n" +
             "\n\n" +
             "        Pagarse a: " + nombre +

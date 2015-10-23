@@ -490,5 +490,53 @@ namespace Cheques.Properties {
                 this["largoCheque3"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string campo {
+            get {
+                return ((string)(this["campo"]));
+            }
+            set {
+                this["campo"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string ciudad {
+            get {
+                return ((string)(this["ciudad"]));
+            }
+            set {
+                this["ciudad"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string colonia {
+            get {
+                return ((string)(this["colonia"]));
+            }
+            set {
+                this["colonia"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string calle {
+            get {
+                return ((string)(this["calle"]));
+            }
+            set {
+                this["calle"] = value;
+            }
+        }
     }
 }

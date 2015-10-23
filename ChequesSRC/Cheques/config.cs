@@ -43,8 +43,12 @@ namespace Cheques
             libro.Text = Properties.Settings.Default.sunLibro;
             letraText.Text = Properties.Settings.Default.letra;
             unidad.Text = Properties.Settings.Default.sunUnidadDeNegocio;
+
+            calle.Text = Properties.Settings.Default.calle;
+            campo.Text = Properties.Settings.Default.campo;
+            ciudad.Text = Properties.Settings.Default.ciudad;
+            colonia.Text = Properties.Settings.Default.colonia;
           
-            
 
 
         }
@@ -87,6 +91,12 @@ namespace Cheques
             Properties.Settings.Default.sunUnidadDeNegocio = unidad.Text;
             Properties.Settings.Default.DatabaseCheques = DatabaseCheques.Text;
             Properties.Settings.Default.letra = letraText.Text;
+
+            Properties.Settings.Default.calle = calle.Text;
+            Properties.Settings.Default.colonia = colonia.Text;
+            Properties.Settings.Default.ciudad = ciudad.Text;
+            Properties.Settings.Default.campo = campo.Text;
+           
             Properties.Settings.Default.Save();
         }
         private void button1_Click(object sender, EventArgs e)
