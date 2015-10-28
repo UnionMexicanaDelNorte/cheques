@@ -57,7 +57,7 @@
       <Value Profile="(Default)">SUNPLUSCHEQUES</Value>
     </Setting>
     <Setting Name="letra" Type="System.String" Scope="User">
-      <Value Profile="(Default)">S</Value>
+      <Value Profile="(Default)">C</Value>
     </Setting>
     <Setting Name="sunEspacios2" Type="System.String" Scope="User">
       <Value Profile="(Default)">102</Value>
@@ -130,6 +130,114 @@
     </Setting>
     <Setting Name="calle" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="fechaX1" Type="System.String" Scope="User">
+      <Value Profile="(Default)">500</Value>
+    </Setting>
+    <Setting Name="fechaY1" Type="System.String" Scope="User">
+      <Value Profile="(Default)">200</Value>
+    </Setting>
+    <Setting Name="fechaX2" Type="System.String" Scope="User">
+      <Value Profile="(Default)">500</Value>
+    </Setting>
+    <Setting Name="fechaX3" Type="System.String" Scope="User">
+      <Value Profile="(Default)">500</Value>
+    </Setting>
+    <Setting Name="fechaX4" Type="System.String" Scope="User">
+      <Value Profile="(Default)">500</Value>
+    </Setting>
+    <Setting Name="fechaY2" Type="System.String" Scope="User">
+      <Value Profile="(Default)">200</Value>
+    </Setting>
+    <Setting Name="fechaY3" Type="System.String" Scope="User">
+      <Value Profile="(Default)">200</Value>
+    </Setting>
+    <Setting Name="fechaY4" Type="System.String" Scope="User">
+      <Value Profile="(Default)">200</Value>
+    </Setting>
+    <Setting Name="nombreX1" Type="System.String" Scope="User">
+      <Value Profile="(Default)">250</Value>
+    </Setting>
+    <Setting Name="nombreX2" Type="System.String" Scope="User">
+      <Value Profile="(Default)">250</Value>
+    </Setting>
+    <Setting Name="nombreX3" Type="System.String" Scope="User">
+      <Value Profile="(Default)">250</Value>
+    </Setting>
+    <Setting Name="nombreX4" Type="System.String" Scope="User">
+      <Value Profile="(Default)">250</Value>
+    </Setting>
+    <Setting Name="nombreY1" Type="System.String" Scope="User">
+      <Value Profile="(Default)">165</Value>
+    </Setting>
+    <Setting Name="nombreY2" Type="System.String" Scope="User">
+      <Value Profile="(Default)">165</Value>
+    </Setting>
+    <Setting Name="nombreY3" Type="System.String" Scope="User">
+      <Value Profile="(Default)">165</Value>
+    </Setting>
+    <Setting Name="nombreY4" Type="System.String" Scope="User">
+      <Value Profile="(Default)">165</Value>
+    </Setting>
+    <Setting Name="cantidadX1" Type="System.String" Scope="User">
+      <Value Profile="(Default)">580</Value>
+    </Setting>
+    <Setting Name="cantidadX2" Type="System.String" Scope="User">
+      <Value Profile="(Default)">580</Value>
+    </Setting>
+    <Setting Name="cantidadX3" Type="System.String" Scope="User">
+      <Value Profile="(Default)">580</Value>
+    </Setting>
+    <Setting Name="cantidadX4" Type="System.String" Scope="User">
+      <Value Profile="(Default)">580</Value>
+    </Setting>
+    <Setting Name="cantidadY1" Type="System.String" Scope="User">
+      <Value Profile="(Default)">165</Value>
+    </Setting>
+    <Setting Name="cantidadY2" Type="System.String" Scope="User">
+      <Value Profile="(Default)">165</Value>
+    </Setting>
+    <Setting Name="cantidadY3" Type="System.String" Scope="User">
+      <Value Profile="(Default)">165</Value>
+    </Setting>
+    <Setting Name="cantidadY4" Type="System.String" Scope="User">
+      <Value Profile="(Default)">165</Value>
+    </Setting>
+    <Setting Name="letraX1" Type="System.String" Scope="User">
+      <Value Profile="(Default)">250</Value>
+    </Setting>
+    <Setting Name="letraX2" Type="System.String" Scope="User">
+      <Value Profile="(Default)">250</Value>
+    </Setting>
+    <Setting Name="letraX3" Type="System.String" Scope="User">
+      <Value Profile="(Default)">250</Value>
+    </Setting>
+    <Setting Name="letraX4" Type="System.String" Scope="User">
+      <Value Profile="(Default)">250</Value>
+    </Setting>
+    <Setting Name="letraY1" Type="System.String" Scope="User">
+      <Value Profile="(Default)">140</Value>
+    </Setting>
+    <Setting Name="letraY2" Type="System.String" Scope="User">
+      <Value Profile="(Default)">140</Value>
+    </Setting>
+    <Setting Name="letraY3" Type="System.String" Scope="User">
+      <Value Profile="(Default)">140</Value>
+    </Setting>
+    <Setting Name="letraY4" Type="System.String" Scope="User">
+      <Value Profile="(Default)">140</Value>
+    </Setting>
+    <Setting Name="leftCheque4" Type="System.String" Scope="User">
+      <Value Profile="(Default)">220</Value>
+    </Setting>
+    <Setting Name="largoCheque4" Type="System.String" Scope="User">
+      <Value Profile="(Default)">192</Value>
+    </Setting>
+    <Setting Name="topCheque4" Type="System.String" Scope="User">
+      <Value Profile="(Default)">52</Value>
+    </Setting>
+    <Setting Name="anchoCheque4" Type="System.String" Scope="User">
+      <Value Profile="(Default)">420</Value>
     </Setting>
   </Settings>
 </SettingsFile>

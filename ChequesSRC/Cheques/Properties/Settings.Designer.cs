@@ -241,7 +241,7 @@ namespace Cheques.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("S")]
+        [global::System.Configuration.DefaultSettingValueAttribute("C")]
         public string letra {
             get {
                 return ((string)(this["letra"]));
@@ -536,6 +536,438 @@ namespace Cheques.Properties {
             }
             set {
                 this["calle"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("500")]
+        public string fechaX1 {
+            get {
+                return ((string)(this["fechaX1"]));
+            }
+            set {
+                this["fechaX1"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("200")]
+        public string fechaY1 {
+            get {
+                return ((string)(this["fechaY1"]));
+            }
+            set {
+                this["fechaY1"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("500")]
+        public string fechaX2 {
+            get {
+                return ((string)(this["fechaX2"]));
+            }
+            set {
+                this["fechaX2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("500")]
+        public string fechaX3 {
+            get {
+                return ((string)(this["fechaX3"]));
+            }
+            set {
+                this["fechaX3"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("500")]
+        public string fechaX4 {
+            get {
+                return ((string)(this["fechaX4"]));
+            }
+            set {
+                this["fechaX4"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("200")]
+        public string fechaY2 {
+            get {
+                return ((string)(this["fechaY2"]));
+            }
+            set {
+                this["fechaY2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("200")]
+        public string fechaY3 {
+            get {
+                return ((string)(this["fechaY3"]));
+            }
+            set {
+                this["fechaY3"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("200")]
+        public string fechaY4 {
+            get {
+                return ((string)(this["fechaY4"]));
+            }
+            set {
+                this["fechaY4"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("250")]
+        public string nombreX1 {
+            get {
+                return ((string)(this["nombreX1"]));
+            }
+            set {
+                this["nombreX1"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("250")]
+        public string nombreX2 {
+            get {
+                return ((string)(this["nombreX2"]));
+            }
+            set {
+                this["nombreX2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("250")]
+        public string nombreX3 {
+            get {
+                return ((string)(this["nombreX3"]));
+            }
+            set {
+                this["nombreX3"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("250")]
+        public string nombreX4 {
+            get {
+                return ((string)(this["nombreX4"]));
+            }
+            set {
+                this["nombreX4"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("165")]
+        public string nombreY1 {
+            get {
+                return ((string)(this["nombreY1"]));
+            }
+            set {
+                this["nombreY1"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("165")]
+        public string nombreY2 {
+            get {
+                return ((string)(this["nombreY2"]));
+            }
+            set {
+                this["nombreY2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("165")]
+        public string nombreY3 {
+            get {
+                return ((string)(this["nombreY3"]));
+            }
+            set {
+                this["nombreY3"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("165")]
+        public string nombreY4 {
+            get {
+                return ((string)(this["nombreY4"]));
+            }
+            set {
+                this["nombreY4"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("580")]
+        public string cantidadX1 {
+            get {
+                return ((string)(this["cantidadX1"]));
+            }
+            set {
+                this["cantidadX1"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("580")]
+        public string cantidadX2 {
+            get {
+                return ((string)(this["cantidadX2"]));
+            }
+            set {
+                this["cantidadX2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("580")]
+        public string cantidadX3 {
+            get {
+                return ((string)(this["cantidadX3"]));
+            }
+            set {
+                this["cantidadX3"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("580")]
+        public string cantidadX4 {
+            get {
+                return ((string)(this["cantidadX4"]));
+            }
+            set {
+                this["cantidadX4"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("165")]
+        public string cantidadY1 {
+            get {
+                return ((string)(this["cantidadY1"]));
+            }
+            set {
+                this["cantidadY1"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("165")]
+        public string cantidadY2 {
+            get {
+                return ((string)(this["cantidadY2"]));
+            }
+            set {
+                this["cantidadY2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("165")]
+        public string cantidadY3 {
+            get {
+                return ((string)(this["cantidadY3"]));
+            }
+            set {
+                this["cantidadY3"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("165")]
+        public string cantidadY4 {
+            get {
+                return ((string)(this["cantidadY4"]));
+            }
+            set {
+                this["cantidadY4"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("250")]
+        public string letraX1 {
+            get {
+                return ((string)(this["letraX1"]));
+            }
+            set {
+                this["letraX1"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("250")]
+        public string letraX2 {
+            get {
+                return ((string)(this["letraX2"]));
+            }
+            set {
+                this["letraX2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("250")]
+        public string letraX3 {
+            get {
+                return ((string)(this["letraX3"]));
+            }
+            set {
+                this["letraX3"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("250")]
+        public string letraX4 {
+            get {
+                return ((string)(this["letraX4"]));
+            }
+            set {
+                this["letraX4"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("140")]
+        public string letraY1 {
+            get {
+                return ((string)(this["letraY1"]));
+            }
+            set {
+                this["letraY1"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("140")]
+        public string letraY2 {
+            get {
+                return ((string)(this["letraY2"]));
+            }
+            set {
+                this["letraY2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("140")]
+        public string letraY3 {
+            get {
+                return ((string)(this["letraY3"]));
+            }
+            set {
+                this["letraY3"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("140")]
+        public string letraY4 {
+            get {
+                return ((string)(this["letraY4"]));
+            }
+            set {
+                this["letraY4"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("220")]
+        public string leftCheque4 {
+            get {
+                return ((string)(this["leftCheque4"]));
+            }
+            set {
+                this["leftCheque4"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("192")]
+        public string largoCheque4 {
+            get {
+                return ((string)(this["largoCheque4"]));
+            }
+            set {
+                this["largoCheque4"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("52")]
+        public string topCheque4 {
+            get {
+                return ((string)(this["topCheque4"]));
+            }
+            set {
+                this["topCheque4"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("420")]
+        public string anchoCheque4 {
+            get {
+                return ((string)(this["anchoCheque4"]));
+            }
+            set {
+                this["anchoCheque4"] = value;
             }
         }
     }

@@ -73,6 +73,15 @@
             this.menosLargoCheque = new System.Windows.Forms.Button();
             this.masLargoCheque = new System.Windows.Forms.Button();
             this.largoCheque = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.masLetraY = new System.Windows.Forms.Button();
+            this.menosLetraY = new System.Windows.Forms.Button();
+            this.letraYText = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.letraXText = new System.Windows.Forms.TextBox();
+            this.masLetraX = new System.Windows.Forms.Button();
+            this.menosLetraX = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // webControl1
@@ -116,15 +125,16 @@
             this.entersPrimeros.Name = "entersPrimeros";
             this.entersPrimeros.Size = new System.Drawing.Size(69, 44);
             this.entersPrimeros.TabIndex = 3;
+            this.entersPrimeros.TextChanged += new System.EventHandler(this.entersPrimeros_TextChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(1035, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(175, 26);
+            this.label1.Size = new System.Drawing.Size(99, 26);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Enters Primeros:";
+            this.label1.Text = "Fecha X:";
             // 
             // menosEspaciosIzquierda
             // 
@@ -159,9 +169,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(1030, 231);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(202, 26);
+            this.label2.Size = new System.Drawing.Size(117, 26);
             this.label2.TabIndex = 8;
-            this.label2.Text = "Espacios Izquierda:";
+            this.label2.Text = "Nombre X:";
             // 
             // menosEspaciosDeFecha
             // 
@@ -196,21 +206,21 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(1035, 391);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(190, 26);
+            this.label3.Size = new System.Drawing.Size(126, 26);
             this.label3.TabIndex = 12;
-            this.label3.Text = "Espacios de fecha";
+            this.label3.Text = "Cantidad X:";
             // 
             // entersEntreFechaYNombre
             // 
             this.entersEntreFechaYNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.06283F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.entersEntreFechaYNombre.Location = new System.Drawing.Point(1080, 634);
+            this.entersEntreFechaYNombre.Location = new System.Drawing.Point(1349, 450);
             this.entersEntreFechaYNombre.Name = "entersEntreFechaYNombre";
             this.entersEntreFechaYNombre.Size = new System.Drawing.Size(69, 44);
             this.entersEntreFechaYNombre.TabIndex = 13;
             // 
             // menosEntersEntreFechaYNombre
             // 
-            this.menosEntersEntreFechaYNombre.Location = new System.Drawing.Point(1035, 634);
+            this.menosEntersEntreFechaYNombre.Location = new System.Drawing.Point(1289, 452);
             this.menosEntersEntreFechaYNombre.Name = "menosEntersEntreFechaYNombre";
             this.menosEntersEntreFechaYNombre.Size = new System.Drawing.Size(38, 44);
             this.menosEntersEntreFechaYNombre.TabIndex = 14;
@@ -220,7 +230,7 @@
             // 
             // masEntersEntreFechaYNombre
             // 
-            this.masEntersEntreFechaYNombre.Location = new System.Drawing.Point(1166, 634);
+            this.masEntersEntreFechaYNombre.Location = new System.Drawing.Point(1434, 454);
             this.masEntersEntreFechaYNombre.Name = "masEntersEntreFechaYNombre";
             this.masEntersEntreFechaYNombre.Size = new System.Drawing.Size(37, 44);
             this.masEntersEntreFechaYNombre.TabIndex = 15;
@@ -231,11 +241,11 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(1035, 574);
+            this.label4.Location = new System.Drawing.Point(1295, 391);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(292, 26);
+            this.label4.Size = new System.Drawing.Size(127, 26);
             this.label4.TabIndex = 16;
-            this.label4.Text = "Enters entre fecha y nombre:";
+            this.label4.Text = "Cantidad Y:";
             // 
             // entersEntreNombreYLetras
             // 
@@ -268,11 +278,11 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(1271, 13);
+            this.label5.Location = new System.Drawing.Point(1290, 9);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(292, 26);
+            this.label5.Size = new System.Drawing.Size(100, 26);
             this.label5.TabIndex = 20;
-            this.label5.Text = "Enters entre nombre y letras:";
+            this.label5.Text = "Fecha Y:";
             // 
             // menosEspaciosEntreNombreYTotal
             // 
@@ -307,15 +317,16 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(1295, 231);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(306, 26);
+            this.label6.Size = new System.Drawing.Size(118, 26);
             this.label6.TabIndex = 24;
-            this.label6.Text = "Espacios entre nombre y total:";
+            this.label6.Text = "Nombre Y:";
             // 
             // imprimir
             // 
-            this.imprimir.Location = new System.Drawing.Point(1300, 450);
+            this.imprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.06283F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.imprimir.Location = new System.Drawing.Point(1574, 275);
             this.imprimir.Name = "imprimir";
-            this.imprimir.Size = new System.Drawing.Size(231, 60);
+            this.imprimir.Size = new System.Drawing.Size(334, 95);
             this.imprimir.TabIndex = 25;
             this.imprimir.Text = "Imprimir cheque";
             this.imprimir.UseVisualStyleBackColor = true;
@@ -323,9 +334,10 @@
             // 
             // imprimirOrden
             // 
-            this.imprimirOrden.Location = new System.Drawing.Point(1300, 634);
+            this.imprimirOrden.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.06283F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.imprimirOrden.Location = new System.Drawing.Point(1574, 132);
             this.imprimirOrden.Name = "imprimirOrden";
-            this.imprimirOrden.Size = new System.Drawing.Size(231, 65);
+            this.imprimirOrden.Size = new System.Drawing.Size(326, 87);
             this.imprimirOrden.TabIndex = 26;
             this.imprimirOrden.Text = "Imprimir Órden";
             this.imprimirOrden.UseVisualStyleBackColor = true;
@@ -479,6 +491,90 @@
             this.largoCheque.Size = new System.Drawing.Size(100, 44);
             this.largoCheque.TabIndex = 42;
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(1876, 878);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(18, 26);
+            this.label11.TabIndex = 43;
+            this.label11.Text = ".";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(1295, 533);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(89, 26);
+            this.label12.TabIndex = 51;
+            this.label12.Text = "Letra Y:";
+            // 
+            // masLetraY
+            // 
+            this.masLetraY.Location = new System.Drawing.Point(1434, 596);
+            this.masLetraY.Name = "masLetraY";
+            this.masLetraY.Size = new System.Drawing.Size(37, 44);
+            this.masLetraY.TabIndex = 50;
+            this.masLetraY.Text = "+";
+            this.masLetraY.UseVisualStyleBackColor = true;
+            this.masLetraY.Click += new System.EventHandler(this.masLetraY_Click);
+            // 
+            // menosLetraY
+            // 
+            this.menosLetraY.Location = new System.Drawing.Point(1289, 594);
+            this.menosLetraY.Name = "menosLetraY";
+            this.menosLetraY.Size = new System.Drawing.Size(38, 44);
+            this.menosLetraY.TabIndex = 49;
+            this.menosLetraY.Text = "-";
+            this.menosLetraY.UseVisualStyleBackColor = true;
+            this.menosLetraY.Click += new System.EventHandler(this.menosLetraY_Click);
+            // 
+            // letraYText
+            // 
+            this.letraYText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.06283F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letraYText.Location = new System.Drawing.Point(1349, 592);
+            this.letraYText.Name = "letraYText";
+            this.letraYText.Size = new System.Drawing.Size(69, 44);
+            this.letraYText.TabIndex = 48;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(1035, 533);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(88, 26);
+            this.label13.TabIndex = 47;
+            this.label13.Text = "Letra X:";
+            // 
+            // letraXText
+            // 
+            this.letraXText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.06283F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letraXText.Location = new System.Drawing.Point(1080, 592);
+            this.letraXText.Name = "letraXText";
+            this.letraXText.Size = new System.Drawing.Size(69, 44);
+            this.letraXText.TabIndex = 46;
+            this.letraXText.TextChanged += new System.EventHandler(this.letraXText_TextChanged);
+            // 
+            // masLetraX
+            // 
+            this.masLetraX.Location = new System.Drawing.Point(1166, 592);
+            this.masLetraX.Name = "masLetraX";
+            this.masLetraX.Size = new System.Drawing.Size(37, 53);
+            this.masLetraX.TabIndex = 45;
+            this.masLetraX.Text = "+";
+            this.masLetraX.UseVisualStyleBackColor = true;
+            this.masLetraX.Click += new System.EventHandler(this.masLetraX_Click);
+            // 
+            // menosLetraX
+            // 
+            this.menosLetraX.Location = new System.Drawing.Point(1035, 592);
+            this.menosLetraX.Name = "menosLetraX";
+            this.menosLetraX.Size = new System.Drawing.Size(38, 53);
+            this.menosLetraX.TabIndex = 44;
+            this.menosLetraX.Text = "-";
+            this.menosLetraX.UseVisualStyleBackColor = true;
+            this.menosLetraX.Click += new System.EventHandler(this.menosLetraX_Click);
+            // 
             // previewCheque
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -486,6 +582,15 @@
             this.AutoScroll = true;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1946, 1028);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.masLetraY);
+            this.Controls.Add(this.menosLetraY);
+            this.Controls.Add(this.letraYText);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.letraXText);
+            this.Controls.Add(this.masLetraX);
+            this.Controls.Add(this.menosLetraX);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.largoCheque);
             this.Controls.Add(this.masLargoCheque);
             this.Controls.Add(this.menosLargoCheque);
@@ -533,6 +638,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "previewCheque";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Preview Cheque";
             this.Load += new System.EventHandler(this.previewCheque_Load);
             this.ResumeLayout(false);
@@ -586,6 +692,15 @@
         private System.Windows.Forms.Button menosLargoCheque;
         private System.Windows.Forms.Button masLargoCheque;
         private System.Windows.Forms.TextBox largoCheque;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button masLetraY;
+        private System.Windows.Forms.Button menosLetraY;
+        private System.Windows.Forms.TextBox letraYText;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox letraXText;
+        private System.Windows.Forms.Button masLetraX;
+        private System.Windows.Forms.Button menosLetraX;
 
 
 

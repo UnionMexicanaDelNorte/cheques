@@ -402,6 +402,8 @@ namespace Cheques
             comboBanco2.Items.Add(new Item("ScotiaBank", 1));
             comboBanco2.Items.Add(new Item("Santander", 2));
             comboBanco2.Items.Add(new Item("Bancomer", 3));
+            comboBanco2.Items.Add(new Item("Banorte", 4));
+           
             comboBanco2.SelectedIndex = 0;
   
             this.numeroDiario2.Focus();
