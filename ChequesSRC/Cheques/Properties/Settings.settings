@@ -239,5 +239,8 @@
     <Setting Name="anchoCheque4" Type="System.String" Scope="User">
       <Value Profile="(Default)">420</Value>
     </Setting>
+    <Setting Name="predefinidoCheque" Type="System.String" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

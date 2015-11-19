@@ -148,6 +148,7 @@
             this.comboBanco2.Name = "comboBanco2";
             this.comboBanco2.Size = new System.Drawing.Size(278, 45);
             this.comboBanco2.TabIndex = 2;
+            this.comboBanco2.SelectedIndexChanged += new System.EventHandler(this.comboBanco2_SelectedIndexChanged);
             // 
             // label5
             // 

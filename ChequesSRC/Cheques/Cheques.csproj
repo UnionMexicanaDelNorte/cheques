@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>12</ApplicationRevision>
+    <ApplicationRevision>16</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -63,13 +63,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EO.Web">
-      <HintPath>C:\Program Files (x86)\Essential Objects\EO.Total 2014\EO.Web.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\Essential Objects\EO.Total 2015\EO.Web.dll</HintPath>
     </Reference>
     <Reference Include="EO.WebBrowser">
-      <HintPath>C:\Program Files (x86)\Essential Objects\EO.Total 2014\EO.WebBrowser.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\Essential Objects\EO.Total 2015\EO.WebBrowser.dll</HintPath>
     </Reference>
     <Reference Include="EO.WebBrowser.Wpf">
-      <HintPath>C:\Program Files (x86)\Essential Objects\EO.Total 2014\EO.WebBrowser.Wpf.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\Essential Objects\EO.Total 2015\EO.WebBrowser.Wpf.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

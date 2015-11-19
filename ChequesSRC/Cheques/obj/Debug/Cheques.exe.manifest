@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="Cheques.exe" version="1.0.0.12" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <asmv1:assemblyIdentity name="Cheques.exe" version="1.0.0.16" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
   <application />
   <entryPoint>
     <assemblyIdentity name="Cheques" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
@@ -42,60 +42,84 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Cheques.exe" size="333216">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Cheques.exe" size="334240">
       <assemblyIdentity name="Cheques" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>C3DI6KctwD4Tqc3fzSphgLxQbTA=</dsig:DigestValue>
+        <dsig:DigestValue>UA3S1i/9q5OQ3f/0xdSs8NVvsow=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="EO.Web.dll" size="4957696">
-      <assemblyIdentity name="EO.Web" version="12.0.19.2" publicKeyToken="E92353A6BF73FFFC" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="EO.Base.dll" size="3599360">
+      <assemblyIdentity name="EO.Base" version="15.3.1.0" publicKeyToken="E92353A6BF73FFFC" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>v3R+EnN9WuT7xEk/OUlxLeGeYTk=</dsig:DigestValue>
+        <dsig:DigestValue>YRQeFCuTLPe0yGsqmkTwLqCGN6k=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="EO.WebBrowser.dll" size="27944448">
-      <assemblyIdentity name="EO.WebBrowser" version="3.0.113.0" publicKeyToken="E92353A6BF73FFFC" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="EO.Web.dll" size="4989952">
+      <assemblyIdentity name="EO.Web" version="15.3.1.0" publicKeyToken="E92353A6BF73FFFC" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>lLRUZRAarnIO4UccP7v3xaS9aKY=</dsig:DigestValue>
+        <dsig:DigestValue>/nDMbEdmMLSBdpaYzbGQRKPAHM4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="EO.WebBrowser.Wpf.dll" size="20480">
-      <assemblyIdentity name="EO.WebBrowser.Wpf" version="3.0.113.0" publicKeyToken="E92353A6BF73FFFC" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="EO.WebBrowser.dll" size="290304">
+      <assemblyIdentity name="EO.WebBrowser" version="15.3.1.0" publicKeyToken="E92353A6BF73FFFC" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>QdkSlB4C2mYLKdHEavhsoai1TdE=</dsig:DigestValue>
+        <dsig:DigestValue>BTpPM/2XxU8ophh8687zSEMcfWA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="Cheques.exe.config" size="10525">
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="EO.WebBrowser.Wpf.dll" size="14336">
+      <assemblyIdentity name="EO.WebBrowser.Wpf" version="15.3.1.0" publicKeyToken="E92353A6BF73FFFC" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>PuRbTRIINmrKVo9QgTMNixFPnso=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="EO.WebEngine.dll" size="33122816">
+      <assemblyIdentity name="EO.WebEngine" version="15.3.1.0" publicKeyToken="E92353A6BF73FFFC" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>UR2fnRgW6UpsU6vxox/+pMQ7Pp0=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="Cheques.exe.config" size="10652">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>3PTsnVW7Pp3cAtpLZqSNS39/ulU=</dsig:DigestValue>
+      <dsig:DigestValue>iS2Yz8kjwbc4Xk6h7Mp5hnaPMjQ=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

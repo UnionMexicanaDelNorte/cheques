@@ -970,5 +970,17 @@ namespace Cheques.Properties {
                 this["anchoCheque4"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        public string predefinidoCheque {
+            get {
+                return ((string)(this["predefinidoCheque"]));
+            }
+            set {
+                this["predefinidoCheque"] = value;
+            }
+        }
     }
 }

@@ -312,7 +312,7 @@ namespace Cheques
             }
             catch (Exception ex)
             {
-                System.Windows.Forms.MessageBox.Show(ex.ToString(), "Error Title", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                System.Windows.Forms.MessageBox.Show(ex.ToString(), "Cheques", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             String descr_acntC = "";
 
@@ -338,7 +338,7 @@ namespace Cheques
             }
             catch (Exception ex)
             {
-                System.Windows.Forms.MessageBox.Show(ex.ToString(), "Error Title", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                System.Windows.Forms.MessageBox.Show(ex.ToString(), "Cheques", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
 
 
@@ -347,10 +347,30 @@ namespace Cheques
             PdfFileWriter.TextBox BoxToPDF = new PdfFileWriter.TextBox(WidthToPDF, 0.25);
             int l;
             StringBuilder debitos = new StringBuilder("");
-            for(l=0;l<con;l++)
+            StringBuilder otrosDebitos = new StringBuilder("");
+          
+            int hastai = con;
+            int max = 15;
+            PdfContents ContentsToPDF1 = null;
+            if(con>max)
+            {
+                hastai = max;
+                PdfPage PageToPDF1 = new PdfPage(DocumentToPDF);
+                ContentsToPDF1 = new PdfContents(PageToPDF1);
+
+                ContentsToPDF1.SaveGraphicsState();
+                ContentsToPDF1.Translate(0.1, 750);
+                for (l = max; l < con; l++)
+                {
+                    otrosDebitos.Append("\n         Debito: $" + arrayCantidad[l] + " - " + arrayCuentas[l] + " - " + arrayDescr[l]);
+                }
+
+            }
+            for(l=0;l<hastai;l++)
             {
                 debitos.Append("\n         Debito: $" + arrayCantidad[l] +" - " +arrayCuentas[l] + " - " + arrayDescr[l]);
             }
+          
             String aver = "\n\n\n\n\n" +
             space +
             Properties.Settings.Default.campo +
@@ -370,8 +390,9 @@ namespace Cheques
             "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" +
             "         Crédito: $" +total+" - "+ ACCNT_CODE + " - " + descr_acntC.Trim() +debitos.ToString();
             BoxToPDF.AddText(ArialNormalToPDF, FontSizeToPDF,aver);
-
-
+            Double PosYToPDF = HeightToPDF;
+           
+         
 
 
 
@@ -420,11 +441,20 @@ namespace Cheques
              numeroAletras);
 
             BoxToPDF.AddText(ArialNormalToPDF, FontSizeToPDF, "\n");
-            Double PosYToPDF = HeightToPDF;
             ContentsToPDF.DrawText(0.0, ref PosYToPDF, 0.0, 0, 0.015, 0.05, TextBoxJustify.FitToWidth, BoxToPDF);
             ContentsToPDF.RestoreGraphicsState();
             ContentsToPDF.SaveGraphicsState();
             ContentsToPDF.RestoreGraphicsState();
+
+            if (con > max)
+            {
+                PdfFileWriter.TextBox BoxToPDF1 = new PdfFileWriter.TextBox(WidthToPDF, 0.25);
+                BoxToPDF1.AddText(ArialNormalToPDF, FontSizeToPDF, otrosDebitos.ToString());
+                ContentsToPDF1.DrawText(0.0, ref PosYToPDF, 0.0, 0, 0.015, 0.05, TextBoxJustify.FitToWidth, BoxToPDF1);
+                ContentsToPDF1.RestoreGraphicsState();
+                ContentsToPDF1.SaveGraphicsState();
+                ContentsToPDF1.RestoreGraphicsState();
+            }
             DocumentToPDF.CreateFile();
 
             Box.AddText(ArialNormal, FontSize, "\n");

@@ -326,6 +326,9 @@ namespace Cheques
                     case 3:
                         Properties.Settings.Default.largoCheque3 = "" + cuantos;
                         break;
+                    case 4:
+                        Properties.Settings.Default.largoCheque4 = "" + cuantos;
+                        break;
                 }
                 largoCheque.Text = Convert.ToString(DataBinder.Eval(Properties.Settings.Default, "largoCheque" + tipoDeBancoGlobal));
                 vuelveAHacerElCheque(true);
@@ -352,6 +355,9 @@ namespace Cheques
                         break;
                     case 3:
                         Properties.Settings.Default.anchoCheque3 = "" + cuantos;
+                        break;
+                    case 4:
+                        Properties.Settings.Default.anchoCheque4 = "" + cuantos;
                         break;
                 }
                 anchoCheque.Text = Convert.ToString(DataBinder.Eval(Properties.Settings.Default, "anchoCheque" + tipoDeBancoGlobal));
@@ -381,6 +387,9 @@ namespace Cheques
                     case 3:
                         Properties.Settings.Default.topCheque3 = "" + cuantos;
                         break;
+                    case 4:
+                        Properties.Settings.Default.topCheque4 = "" + cuantos;
+                        break;
                 }
                 topCheque.Text = Convert.ToString(DataBinder.Eval(Properties.Settings.Default, "topCheque" + tipoDeBancoGlobal));
                 vuelveAHacerElCheque(true);
@@ -408,6 +417,9 @@ namespace Cheques
                         break;
                     case 3:
                         Properties.Settings.Default.leftCheque3 = "" + cuantos;
+                        break;
+                    case 4:
+                        Properties.Settings.Default.leftCheque4 = "" + cuantos;
                         break;
                 }
                 leftCheque.Text = Convert.ToString(DataBinder.Eval(Properties.Settings.Default, "leftCheque" + tipoDeBancoGlobal));

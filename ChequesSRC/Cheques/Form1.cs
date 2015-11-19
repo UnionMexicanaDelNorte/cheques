@@ -404,7 +404,7 @@ namespace Cheques
             comboBanco2.Items.Add(new Item("Bancomer", 3));
             comboBanco2.Items.Add(new Item("Banorte", 4));
            
-            comboBanco2.SelectedIndex = 0;
+            comboBanco2.SelectedIndex = Convert.ToInt32(Properties.Settings.Default.predefinidoCheque)-1;
   
             this.numeroDiario2.Focus();
      
@@ -436,6 +436,14 @@ namespace Cheques
         {
             PorMes form = new PorMes();
             form.Show();
+        }
+
+        private void comboBanco2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Item itm = (Item)comboBanco2.SelectedItem;
+            //int value = itm.Value-1;
+            Properties.Settings.Default.predefinidoCheque = itm.Value.ToString();
+            Properties.Settings.Default.Save();
         }
 
     }
